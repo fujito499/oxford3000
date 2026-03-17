@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#6366f1">
+  <meta name="description" content="เรียนคำศัพท์ Oxford 3000 พร้อมคำแปลไทย คำอ่าน และคำคล้องจอง">
+  <title>คำศัพท์ Oxford 3000 🌟</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- HEADER -->
+    <header class="app-header">
+      <div class="header-top">
+        <div class="app-logo">
+          <div class="logo-icon">📖</div>
+          <div>
+            <div class="logo-text">Oxford Words</div>
+            <div class="logo-sub">เรียนภาษาอังกฤษสนุก ๆ</div>
+          </div>
+        </div>
+        <div class="header-stats">
+          <div class="stat-pill">✓ <span id="stat-studied">0</span></div>
+          <div class="stat-pill">🔥 <span id="stat-streak">0</span></div>
+        </div>
+      </div>
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="ค้นหาคำศัพท์...">
+      </div>
+    </header>
+
+    <!-- PAGE: HOME -->
+    <main id="page-home" class="page active">
+
+      <!-- Progress Banner -->
+      <div class="progress-banner">
+        <div class="progress-label">
+          <span>🎯 ความคืบหน้า</span>
+          <span id="stat-percent">0%</span>
+        </div>
+        <div class="progress-track">
+          <div id="progress-bar"></div>
+        </div>
+        <div class="progress-stats">
+          <div class="pstat">
+            <div class="pstat-val" id="stat-studied">0</div>
+            <div class="pstat-label">เรียนแล้ว</div>
+          </div>
+          <div class="pstat">
+            <div class="pstat-val" id="stat-total">0</div>
+            <div class="pstat-label">ทั้งหมด</div>
+          </div>
+          <div class="pstat">
+            <div class="pstat-val" id="stat-streak">0</div>
+            <div class="pstat-label">สถิติสูงสุด</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="section-title">หมวดหมู่</div>
+      <div class="cat-scroll" id="cat-grid"></div>
+
+      <!-- Word Grid -->
+      <div class="word-grid-header">
+        <span class="section-title" style="padding:0;margin:0">คำศัพท์</span>
+        <span class="word-count" id="word-count"></span>
+      </div>
+      <div id="word-grid"></div>
+
+    </main>
+
+    <!-- PAGE: QUIZ -->
+    <main id="page-quiz" class="page">
+      <div id="quiz-area"></div>
+    </main>
+
+    <!-- PAGE: RHYMES -->
+    <main id="page-rhymes" class="page">
+      <div id="rhyme-content"></div>
+    </main>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+      <button class="nav-btn active" data-page="home" onclick="showPage('home')">
+        <span class="nav-icon">📚</span>
+        <span>คำศัพท์</span>
+      </button>
+      <button class="nav-btn" data-page="quiz" onclick="showPage('quiz')">
+        <span class="nav-icon">✏️</span>
+        <span>ข้อสอบ</span>
+      </button>
+      <button class="nav-btn" data-page="rhymes" onclick="showPage('rhymes'); renderRhymes()">
+        <span class="nav-icon">🎵</span>
+        <span>คล้องจอง</span>
+      </button>
+    </nav>
+
+    <!-- WORD DETAIL MODAL -->
+    <div id="word-modal">
+      <div id="modal-content"></div>
+    </div>
+
+  </div>
+
+  <script src="js/words.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Rhymes page render
+    function renderRhymes() {
+      const groups = {};
+      const words = getFilteredWords();
+
+      words.forEach(w => {
+        const key = w.rhymeGroup;
+        if (!groups[key]) groups[key] = [];
+        groups[key].push(w);
+      });
+
+      const sortedGroups = Object.entries(groups)
+        .filter(([, ws]) => ws.length >= 1)
+        .sort(([, a], [, b]) => b.length - a.length);
+
+      const colors = ['#6366f1','#f59e0b','#10b981','#ef4444','#3b82f6','#a855f7','#ec4899','#f97316'];
+
+      document.getElementById('rhyme-content').innerHTML = `
+        <div style="padding:16px 16px 8px; font-size:13px; color:#6b7280; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">
+          🎵 คำคล้องจองทั้งหมด
+        </div>
+        ${sortedGroups.map(([group, ws], i) => `
+          <div class="rhyme-group-card" style="border-left-color:${colors[i % colors.length]}">
+            <div class="rhyme-group-title" style="color:${colors[i % colors.length]}">
+              -${group.toUpperCase()} (${ws.length} คำ)
+            </div>
+            <div class="rhyme-words">
+              ${ws.map(w => `
+                <button class="rhyme-pill" onclick="openWordDetail(${w.id}); speakWord('${w.word}')">
+                  <span class="en">${w.word}</span>
+                  <span class="th">${w.thai}</span>
+                </button>
+              `).join('')}
+            </div>
+            <div style="margin-top:10px; font-size:13px; color:#6b7280; background:#f9fafb; padding:8px 12px; border-radius:8px; line-height:1.6">
+              ${ws[0]?.rhyme || ''}
+            </div>
+          </div>
+        `).join('')}
+      `;
+    }
+  </script>
+</body>
+</html>
