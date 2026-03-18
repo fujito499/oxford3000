@@ -61,14 +61,21 @@ function updateStats() {
 }
 
 // Page Navigation
-function showPage(page) {
+function showPage(page, skipQuizInit = false) {
+  const previousPage = currentPage;
+
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + page).classList.add('active');
+
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   const navBtn = document.querySelector(`.nav-btn[data-page="${page}"]`);
   if (navBtn) navBtn.classList.add('active');
+
   currentPage = page;
-  if (page === 'quiz') initQuiz();
+
+  if (page === 'quiz' && !skipQuizInit && previousPage !== 'quiz') {
+    initQuiz();
+  }
 }
 
 // Categories
