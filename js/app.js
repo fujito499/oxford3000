@@ -323,10 +323,16 @@ function showQuizResult() {
       <div class="result-streak">สถิติต่อเนื่อง: 🔥 ${score.maxStreak}</div>
       <div class="result-btns">
         <button class="btn-primary" onclick="initQuiz()">🔄 ทำใหม่</button>
-        <button class="btn-secondary" onclick="showPage('home')">📚 เรียนต่อ</button>
+        <button class="btn-secondary" onclick="continueLearning()">📚 เรียนต่อ</button>
       </div>
     </div>
   `;
+}
+
+function continueLearning() {
+  // อยู่หน้า quiz เหมือนเดิม แล้วสุ่มชุดคำถามใหม่
+  currentPage = 'quiz';
+  initQuiz();
 }
 
 function startQuizForWord(id) {
