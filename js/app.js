@@ -21,9 +21,31 @@ function saveProgress() {
 }
 
 function getFilteredWords() {
-  if (currentCategory === 'all') return WORDS;
-  if (currentCategory === 'favorites') return WORDS.filter(w => favorites.has(w.id));
-  return WORDS.filter(w => w.category === currentCategory);
+  let words;
+
+  if (currentCategory === 'all') {
+    words = [...WORDS];
+  } else if (currentCategory === 'favorites') {
+    words = WORDS.filter(w => favorites.has(w.id));
+  } else {
+    words = WORDS.filter(w => w.category === currentCategory);
+  }
+
+  const levelOrder = {
+    A1: 1,
+    A2: 2,
+    B1: 3,
+    B2: 4,
+    C1: 5,
+    C2: 6
+  };
+
+  return words.sort((a, b) => {
+    const levelDiff = (levelOrder[a.level] || 999) - (levelOrder[b.level] || 999);
+    if (levelDiff !== 0) return levelDiff;
+
+    return a.word.localeCompare(b.word, 'en', { sensitivity: 'base' });
+  });
 }
 
 function updateStats() {
