@@ -496,6 +496,380 @@ const WORDS = [
   { id:398, word:"kindness", phonetic:"/ˈkaɪndnəs/", thai:"ความใจดี", category:"values", level:"B1", rhyme:"ใจ ดี ทำ โลก สวย งาม ขึ้น ทุก วัน", example:"Kindness costs nothing.", exampleThai:"ความใจดีไม่มีราคา", rhymeGroup:"ness" },
   { id:399, word:"patience", phonetic:"/ˈpeɪʃns/", thai:"ความอดทน", category:"values", level:"B1", rhyme:"อด ทน รอ ได้ ผล ดี กว่า ใจ ร้อน", example:"Patience is a great virtue.", exampleThai:"ความอดทนเป็นคุณธรรมที่ยิ่งใหญ่", rhymeGroup:"ence" },
   { id:400, word:"happiness", phonetic:"/ˈhæpinəs/", thai:"ความสุข", category:"values", level:"A1", rhyme:"ความ สุข อยู่ ใกล้ แค่ มอง ให้ เห็น", example:"Happiness comes from within.", exampleThai:"ความสุขมาจากภายใน", rhymeGroup:"ness" },
+
+  // A2 - More Animals (insects, sea, farm)
+  { id:401, word:"ant", phonetic:"/ænt/", thai:"มด", category:"animals", level:"A1", rhyme:"มด ตัว เล็ก แต่ ขยัน ที่สุด ใน โลก", example:"Ants work together as a team.", exampleThai:"มดทำงานร่วมกันเป็นทีม", rhymeGroup:"ant" },
+  { id:402, word:"fly", phonetic:"/flaɪ/", thai:"แมลงวัน", category:"animals", level:"A1", rhyme:"แมลง วัน บิน ว่อน หา กิน ทุก ที่", example:"Flies spread germs.", exampleThai:"แมลงวันแพร่เชื้อโรค", rhymeGroup:"y" },
+  { id:403, word:"mosquito", phonetic:"/məˈskiːtoʊ/", thai:"ยุง", category:"animals", level:"A1", rhyme:"ยุง กัด คัน แต่ ยา ทา แล้ว หาย", example:"Mosquitoes bite at night.", exampleThai:"ยุงกัดตอนกลางคืน", rhymeGroup:"o" },
+  { id:404, word:"worm", phonetic:"/wɜːm/", thai:"หนอน/ไส้เดือน", category:"animals", level:"A1", rhyme:"ไส้ เดือน ขุด ดิน ช่วย ต้นไม้ เติบโต", example:"Worms help the soil.", exampleThai:"ไส้เดือนช่วยดิน", rhymeGroup:"orm" },
+  { id:405, word:"parrot", phonetic:"/ˈpærət/", thai:"นกแก้ว", category:"animals", level:"A1", rhyme:"นก แก้ว พูด ได้ เก่ง สี สด ใส งาม", example:"The parrot can talk.", exampleThai:"นกแก้วพูดได้", rhymeGroup:"ot" },
+  { id:406, word:"owl", phonetic:"/aʊl/", thai:"นกฮูก", category:"animals", level:"A1", rhyme:"นก ฮูก ตา โต ล่า เหยื่อ ยาม ราตรี", example:"Owls are wise birds.", exampleThai:"นกฮูกเป็นนกที่ฉลาด", rhymeGroup:"owl" },
+  { id:407, word:"shark", phonetic:"/ʃɑːk/", thai:"ปลาฉลาม", category:"animals", level:"A2", rhyme:"ปลา ฉลาม ว่าย เร็ว แหวก ทะเล ลึก", example:"Sharks are fast swimmers.", exampleThai:"ปลาฉลามว่ายน้ำเร็วมาก", rhymeGroup:"ark" },
+  { id:408, word:"crocodile", phonetic:"/ˈkrɒkədaɪl/", thai:"จระเข้", category:"animals", level:"A2", rhyme:"จระเข้ ฟัน คม ซ่อน ใต้ น้ำ เย็น", example:"Crocodiles live near rivers.", exampleThai:"จระเข้อาศัยอยู่ใกล้แม่น้ำ", rhymeGroup:"ile" },
+  { id:409, word:"giraffe", phonetic:"/dʒɪˈrɑːf/", thai:"ยีราฟ", category:"animals", level:"A1", rhyme:"ยี ราฟ คอ ยาว กิน ใบ ไม้ สูง ลิบ", example:"Giraffes have long necks.", exampleThai:"ยีราฟมีคอยาว", rhymeGroup:"aff" },
+  { id:410, word:"zebra", phonetic:"/ˈziːbrə/", thai:"ม้าลาย", category:"animals", level:"A1", rhyme:"ม้า ลาย ขาว ดำ สวย งาม แห่ง ทุ่ง หญ้า", example:"Zebras have black and white stripes.", exampleThai:"ม้าลายมีลายขาวดำ", rhymeGroup:"a" },
+  { id:411, word:"camel", phonetic:"/ˈkæml/", thai:"อูฐ", category:"animals", level:"A2", rhyme:"อูฐ ทน ทาน เดิน ทะเล ทราย ไม่ หิว น้ำ", example:"Camels travel far in the desert.", exampleThai:"อูฐเดินทางไกลในทะเลทราย", rhymeGroup:"el" },
+  { id:412, word:"gorilla", phonetic:"/ɡəˈrɪlə/", thai:"กอริลลา", category:"animals", level:"A2", rhyme:"กอ ริล ลา ใหญ่ โต แข็งแรง ใจ ดี", example:"Gorillas are our close relatives.", exampleThai:"กอริลลาเป็นญาติใกล้ชิดของเรา", rhymeGroup:"a" },
+  { id:413, word:"turtle", phonetic:"/ˈtɜːtl/", thai:"เต่า", category:"animals", level:"A1", rhyme:"เต่า ค่อย ๆ เดิน แต่ ก็ ถึง จุด หมาย", example:"Turtles move slowly but steadily.", exampleThai:"เต่าเดินช้าแต่ก็ถึงที่หมาย", rhymeGroup:"le" },
+  { id:414, word:"deer", phonetic:"/dɪər/", thai:"กวาง", category:"animals", level:"A1", rhyme:"กวาง วิ่ง เร็ว ดั่ง ลม ใน ป่า ลึก", example:"Deer run fast in the forest.", exampleThai:"กวางวิ่งเร็วในป่า", rhymeGroup:"eer" },
+  { id:415, word:"swan", phonetic:"/swɒn/", thai:"หงส์", category:"animals", level:"A2", rhyme:"หงส์ ขาว บริสุทธิ์ ล่อง ลอย น้ำ งาม", example:"Swans are graceful birds.", exampleThai:"หงส์เป็นนกที่งดงาม", rhymeGroup:"an" },
+
+  // A2 - More Food & Drinks
+  { id:416, word:"beef", phonetic:"/biːf/", thai:"เนื้อวัว", category:"food", level:"A2", rhyme:"เนื้อ วัว อบ หอม นุ่ม รส ชาติ เข้ม", example:"I ordered beef steak.", exampleThai:"ฉันสั่งสเต็กเนื้อวัว", rhymeGroup:"eef" },
+  { id:417, word:"pork", phonetic:"/pɔːk/", thai:"เนื้อหมู", category:"food", level:"A2", rhyme:"เนื้อ หมู ย่าง หอม กลิ่น ชวน กิน", example:"Pork is popular in Thailand.", exampleThai:"เนื้อหมูเป็นที่นิยมในไทย", rhymeGroup:"ork" },
+  { id:418, word:"seafood", phonetic:"/ˈsiːfuːd/", thai:"อาหารทะเล", category:"food", level:"A2", rhyme:"อาหาร ทะเล สด กลิ่น หอม รส แซบ", example:"Thai seafood is delicious.", exampleThai:"อาหารทะเลไทยอร่อยมาก", rhymeGroup:"ood" },
+  { id:419, word:"sushi", phonetic:"/ˈsuːʃi/", thai:"ซูชิ", category:"food", level:"A2", rhyme:"ซู ชิ ญี่ปุ่น หน้า ตา สวย รส ดี", example:"Sushi is a Japanese dish.", exampleThai:"ซูชิเป็นอาหารญี่ปุ่น", rhymeGroup:"y" },
+  { id:420, word:"curry", phonetic:"/ˈkʌri/", thai:"แกง", category:"food", level:"A2", rhyme:"แกง ร้อน เผ็ด หอม กลิ่น เครื่อง เทศ หอม", example:"Thai curry is very tasty.", exampleThai:"แกงไทยอร่อยมาก", rhymeGroup:"y" },
+  { id:421, word:"yogurt", phonetic:"/ˈjɒɡət/", thai:"โยเกิร์ต", category:"food", level:"A2", rhyme:"โย เกิร์ต เปรี้ยว นิด หน่อย ดี ต่อ สุขภาพ", example:"Eat yogurt for breakfast.", exampleThai:"กินโยเกิร์ตตอนเช้า", rhymeGroup:"urt" },
+  { id:422, word:"cereal", phonetic:"/ˈsɪəriəl/", thai:"ซีเรียล", category:"food", level:"A2", rhyme:"ซี เรียล กรอบ หวาน ซด นม อร่อย", example:"I eat cereal every morning.", exampleThai:"ฉันกินซีเรียลทุกเช้า", rhymeGroup:"al" },
+  { id:423, word:"strawberry", phonetic:"/ˈstrɔːbəri/", thai:"สตรอว์เบอร์รี", category:"food", level:"A2", rhyme:"สตรอว์ เบอ รี่ แดง หวาน อม เปรี้ยว ชื่น ใจ", example:"Strawberries are sweet and red.", exampleThai:"สตรอว์เบอร์รีหวานและแดง", rhymeGroup:"y" },
+  { id:424, word:"watermelon", phonetic:"/ˈwɔːtəmelən/", thai:"แตงโม", category:"food", level:"A1", rhyme:"แตง โม แดง ฉ่ำ หวาน ชื่น ใจ ยาม ร้อน", example:"Watermelon is cool and sweet.", exampleThai:"แตงโมเย็นและหวาน", rhymeGroup:"on" },
+  { id:425, word:"mango", phonetic:"/ˈmæŋɡoʊ/", thai:"มะม่วง", category:"food", level:"A1", rhyme:"มะ ม่วง หวาน ฉ่ำ ผล ไม้ ไทย งาม", example:"Mango is Thailand's favourite fruit.", exampleThai:"มะม่วงเป็นผลไม้โปรดของคนไทย", rhymeGroup:"o" },
+  { id:426, word:"pineapple", phonetic:"/ˈpaɪnæpl/", thai:"สับปะรด", category:"food", level:"A1", rhyme:"สับ ปะ รด หวาน เปรี้ยว กลิ่น หอม ชื่น ใจ", example:"Pineapple is sweet and sour.", exampleThai:"สับปะรดหวานและเปรี้ยว", rhymeGroup:"le" },
+  { id:427, word:"coconut", phonetic:"/ˈkoʊkənʌt/", thai:"มะพร้าว", category:"food", level:"A2", rhyme:"มะ พร้าว น้ำ หวาน ชื่น คอ ผล ไม้ ไทย", example:"Coconut water is refreshing.", exampleThai:"น้ำมะพร้าวชื่นใจ", rhymeGroup:"ut" },
+  { id:428, word:"grape", phonetic:"/ɡreɪp/", thai:"องุ่น", category:"food", level:"A1", rhyme:"องุ่น กลม เล็ก หวาน เปรี้ยว กัด อร่อย", example:"Grapes are juicy and sweet.", exampleThai:"องุ่นฉ่ำและหวาน", rhymeGroup:"ape" },
+  { id:429, word:"mushroom", phonetic:"/ˈmʌʃruːm/", thai:"เห็ด", category:"food", level:"A2", rhyme:"เห็ด งอก ใน ป่า หลาย ชนิด กิน ได้", example:"Mushrooms grow in forests.", exampleThai:"เห็ดงอกในป่า", rhymeGroup:"oom" },
+  { id:430, word:"cucumber", phonetic:"/ˈkjuːkʌmbər/", thai:"แตงกวา", category:"food", level:"A2", rhyme:"แตง กวา เย็น สด ชื่น กัด กรอบ ดี", example:"Cucumber is cool and crunchy.", exampleThai:"แตงกวาเย็นและกรอบ", rhymeGroup:"er" },
+
+  // A2 - Clothes & Accessories
+  { id:431, word:"scarf", phonetic:"/skɑːf/", thai:"ผ้าพันคอ", category:"clothes", level:"A2", rhyme:"ผ้า พัน คอ กัน หนาว อุ่น สบาย นัก", example:"Wear a scarf in winter.", exampleThai:"ใส่ผ้าพันคอในฤดูหนาว", rhymeGroup:"arf" },
+  { id:432, word:"gloves", phonetic:"/ɡlʌvz/", thai:"ถุงมือ", category:"clothes", level:"A2", rhyme:"ถุง มือ ใส่ กัน หนาว มือ อุ่น สบาย", example:"Wear gloves when it's cold.", exampleThai:"ใส่ถุงมือตอนอากาศหนาว", rhymeGroup:"oves" },
+  { id:433, word:"socks", phonetic:"/sɒks/", thai:"ถุงเท้า", category:"clothes", level:"A1", rhyme:"ถุง เท้า ใส่ ทุก วัน เท้า สะอาด ดี", example:"Put on clean socks.", exampleThai:"ใส่ถุงเท้าสะอาด", rhymeGroup:"ocks" },
+  { id:434, word:"belt", phonetic:"/belt/", thai:"เข็มขัด", category:"clothes", level:"A2", rhyme:"เข็ม ขัด รัด เอว กระชับ ดู ดี มาก", example:"He wears a leather belt.", exampleThai:"เขาใส่เข็มขัดหนัง", rhymeGroup:"elt" },
+  { id:435, word:"uniform", phonetic:"/ˈjuːnɪfɔːm/", thai:"ชุดนักเรียน/เครื่องแบบ", category:"clothes", level:"A2", rhyme:"ชุด นักเรียน ใส่ ทุก วัน ดู เรียบ ร้อย", example:"Students wear uniforms to school.", exampleThai:"นักเรียนใส่ชุดนักเรียนไปโรงเรียน", rhymeGroup:"orm" },
+  { id:436, word:"pyjamas", phonetic:"/pəˈdʒɑːməz/", thai:"ชุดนอน", category:"clothes", level:"A2", rhyme:"ชุด นอน นุ่ม สบาย ใส่ แล้ว ง่วง นอน", example:"I wear pyjamas to bed.", exampleThai:"ฉันใส่ชุดนอนก่อนนอน", rhymeGroup:"as" },
+  { id:437, word:"ring", phonetic:"/rɪŋ/", thai:"แหวน", category:"clothes", level:"A2", rhyme:"แหวน วาว ประดับ นิ้ว งาม สง่า", example:"She wears a gold ring.", exampleThai:"เธอใส่แหวนทอง", rhymeGroup:"ing" },
+  { id:438, word:"necklace", phonetic:"/ˈnekləs/", thai:"สร้อยคอ", category:"clothes", level:"A2", rhyme:"สร้อย คอ ส่อง แสง งาม ประดับ รูป", example:"She has a beautiful necklace.", exampleThai:"เธอมีสร้อยคอสวยงาม", rhymeGroup:"ace" },
+
+  // A2 - More Sports
+  { id:439, word:"basketball", phonetic:"/ˈbɑːskɪtbɔːl/", thai:"บาสเกตบอล", category:"sports", level:"A2", rhyme:"บาส เกต บอล โยน ลง ห่วง ได้ แต้ม", example:"I play basketball after school.", exampleThai:"ฉันเล่นบาสเกตบอลหลังเลิกเรียน", rhymeGroup:"all" },
+  { id:440, word:"volleyball", phonetic:"/ˈvɒlibɔːl/", thai:"วอลเลย์บอล", category:"sports", level:"A2", rhyme:"วอล เลย์ บอล ตบ ลูก ข้าม ตาข่าย ได้", example:"We play volleyball at the beach.", exampleThai:"เราเล่นวอลเลย์บอลที่ชายหาด", rhymeGroup:"all" },
+  { id:441, word:"swimming", phonetic:"/ˈswɪmɪŋ/", thai:"การว่ายน้ำ", category:"sports", level:"A1", rhyme:"ว่าย น้ำ เย็น สดชื่น ออก กำลัง กาย ดี", example:"Swimming is great exercise.", exampleThai:"การว่ายน้ำเป็นการออกกำลังกายที่ดี", rhymeGroup:"ing" },
+  { id:442, word:"cycling", phonetic:"/ˈsaɪklɪŋ/", thai:"การปั่นจักรยาน", category:"sports", level:"A2", rhyme:"ปั่น จักรยาน เพลิน ใจ ออก กำลัง กาย ดี", example:"Cycling keeps you fit.", exampleThai:"การปั่นจักรยานทำให้ร่างกายแข็งแรง", rhymeGroup:"ing" },
+  { id:443, word:"yoga", phonetic:"/ˈjoʊɡə/", thai:"โยคะ", category:"sports", level:"A2", rhyme:"โย คะ ยืด เหยียด ร่างกาย สงบ ใจ", example:"Yoga relaxes the mind.", exampleThai:"โยคะทำให้จิตใจสงบ", rhymeGroup:"a" },
+  { id:444, word:"marathon", phonetic:"/ˈmærəθən/", thai:"มาราธอน", category:"sports", level:"B1", rhyme:"มา รา ธอน วิ่ง ไกล ทดสอบ ใจ ที่ กล้า", example:"Running a marathon is hard.", exampleThai:"การวิ่งมาราธอนยากมาก", rhymeGroup:"on" },
+  { id:445, word:"champion", phonetic:"/ˈtʃæmpiən/", thai:"แชมเปี้ยน", category:"sports", level:"B1", rhyme:"แชม เปี้ยน ดัง ที่สุด ใน สนาม แข่ง", example:"She became the champion.", exampleThai:"เธอกลายเป็นแชมเปี้ยน", rhymeGroup:"on" },
+  { id:446, word:"medal", phonetic:"/ˈmedl/", thai:"เหรียญรางวัล", category:"sports", level:"B1", rhyme:"เหรียญ รางวัล ทอง เงิน ทองแดง ความ ภูมิ ใจ", example:"She won a gold medal.", exampleThai:"เธอได้รับเหรียญทอง", rhymeGroup:"al" },
+  { id:447, word:"team", phonetic:"/tiːm/", thai:"ทีม", category:"sports", level:"A1", rhyme:"ทีม ดี ร่วม ใจ สู้ ชนะ ได้ แน่", example:"Our team works well together.", exampleThai:"ทีมของเราทำงานร่วมกันดีมาก", rhymeGroup:"eam" },
+  { id:448, word:"competition", phonetic:"/ˌkɒmpɪˈtɪʃn/", thai:"การแข่งขัน", category:"sports", level:"B1", rhyme:"แข่ง ขัน สนุก ดี ทำ ให้ พัฒนา", example:"Enter the competition!", exampleThai:"เข้าร่วมการแข่งขัน!", rhymeGroup:"on" },
+
+  // A2 - More Arts & Entertainment
+  { id:449, word:"painting", phonetic:"/ˈpeɪntɪŋ/", thai:"ภาพวาด", category:"arts", level:"A1", rhyme:"ภาพ วาด สวย งาม บอก เรื่อง ราว ได้", example:"That painting is beautiful.", exampleThai:"ภาพวาดนั้นสวยมาก", rhymeGroup:"ing" },
+  { id:450, word:"drawing", phonetic:"/ˈdrɔːɪŋ/", thai:"การวาดรูป", category:"arts", level:"A1", rhyme:"วาด รูป ฝึก บ่อย ๆ ดีขึ้น ทุก วัน", example:"Drawing is a great hobby.", exampleThai:"การวาดรูปเป็นงานอดิเรกที่ดี", rhymeGroup:"ing" },
+  { id:451, word:"sculpture", phonetic:"/ˈskʌlptʃər/", thai:"ประติมากรรม", category:"arts", level:"B1", rhyme:"ประ ติมา กรรม แกะ สลัก สวย งาม ทน", example:"The sculpture is made of marble.", exampleThai:"ประติมากรรมนี้ทำจากหินอ่อน", rhymeGroup:"er" },
+  { id:452, word:"theatre", phonetic:"/ˈθɪətər/", thai:"โรงละคร", category:"arts", level:"A2", rhyme:"โรง ละคร ชม การ แสดง ตื่น ตา ตื่น ใจ", example:"Let's go to the theatre tonight.", exampleThai:"ไปดูละครคืนนี้กัน", rhymeGroup:"er" },
+  { id:453, word:"concert", phonetic:"/ˈkɒnsət/", thai:"คอนเสิร์ต", category:"arts", level:"A2", rhyme:"คอน เสิร์ต ดนตรี สด ชื่น ใจ มาก", example:"The concert was amazing.", exampleThai:"คอนเสิร์ตนั้นยอดเยี่ยมมาก", rhymeGroup:"ert" },
+  { id:454, word:"festival", phonetic:"/ˈfestɪvl/", thai:"เทศกาล", category:"arts", level:"A2", rhyme:"เทศกาล สนุก สนาน รื่น เริง ทุก คน", example:"The festival was colourful.", exampleThai:"เทศกาลนั้นมีสีสันมาก", rhymeGroup:"al" },
+  { id:455, word:"novel", phonetic:"/ˈnɒvl/", thai:"นิยาย", category:"arts", level:"B1", rhyme:"นิ ยาย อ่าน สนุก เพลิน ใจ ลืม เวลา", example:"I love reading novels.", exampleThai:"ฉันชอบอ่านนิยาย", rhymeGroup:"el" },
+  { id:456, word:"poem", phonetic:"/ˈpoʊɪm/", thai:"บทกวี", category:"arts", level:"B1", rhyme:"บท กวี ไพเราะ ซึ้ง ใจ ทุก บรรทัด", example:"She writes beautiful poems.", exampleThai:"เธอเขียนบทกวีที่สวยงาม", rhymeGroup:"em" },
+  { id:457, word:"guitar", phonetic:"/ɡɪˈtɑːr/", thai:"กีตาร์", category:"arts", level:"A1", rhyme:"กี ตาร์ ดีด เพลง หวาน ชื่น ใจ ฟัง", example:"He plays the guitar beautifully.", exampleThai:"เขาเล่นกีตาร์ได้สวยมาก", rhymeGroup:"ar" },
+  { id:458, word:"drum", phonetic:"/drʌm/", thai:"กลอง", category:"arts", level:"A2", rhyme:"กลอง ตี ดัง สนุก ตาม จังหวะ เพลง", example:"She plays the drums in a band.", exampleThai:"เธอตีกลองในวง", rhymeGroup:"um" },
+  { id:459, word:"piano", phonetic:"/piˈænoʊ/", thai:"เปียโน", category:"arts", level:"A1", rhyme:"เปีย โน เล่น ได้ ไพเราะ ชื่น ใจ ฟัง", example:"She plays piano every day.", exampleThai:"เธอเล่นเปียโนทุกวัน", rhymeGroup:"o" },
+  { id:460, word:"violin", phonetic:"/ˌvaɪəˈlɪn/", thai:"ไวโอลิน", category:"arts", level:"A2", rhyme:"ไว โอ ลิน เล่น ไพเราะ ซึ้ง กินใจ", example:"The violin sounds beautiful.", exampleThai:"ไวโอลินฟังดูไพเราะ", rhymeGroup:"in" },
+
+  // B1 - More Work & Careers
+  { id:461, word:"lawyer", phonetic:"/ˈlɔːjər/", thai:"ทนายความ", category:"work", level:"B1", rhyme:"ทนาย ความ ปกป้อง สิทธิ์ ให้ ลูก ความ", example:"The lawyer defends clients.", exampleThai:"ทนายความปกป้องลูกความ", rhymeGroup:"er" },
+  { id:462, word:"scientist", phonetic:"/ˈsaɪəntɪst/", thai:"นักวิทยาศาสตร์", category:"work", level:"A2", rhyme:"นัก วิทยา ศาสตร์ ค้น คว้า หา ความ จริง", example:"Scientists make discoveries.", exampleThai:"นักวิทยาศาสตร์ค้นพบสิ่งใหม่", rhymeGroup:"ist" },
+  { id:463, word:"pilot", phonetic:"/ˈpaɪlət/", thai:"นักบิน", category:"work", level:"A2", rhyme:"นัก บิน พา เครื่อง บิน สูง ข้าม เมฆ", example:"The pilot landed safely.", exampleThai:"นักบินลงจอดอย่างปลอดภัย", rhymeGroup:"ot" },
+  { id:464, word:"chef", phonetic:"/ʃef/", thai:"เชฟ", category:"work", level:"A2", rhyme:"เชฟ ปรุง อาหาร อร่อย มี ชื่อ เสียง", example:"The chef cooks amazing food.", exampleThai:"เชฟปรุงอาหารได้ยอดเยี่ยม", rhymeGroup:"ef" },
+  { id:465, word:"architect", phonetic:"/ˈɑːkɪtekt/", thai:"สถาปนิก", category:"work", level:"B1", rhyme:"สถา ปนิก ออก แบบ บ้าน สวย งาม", example:"The architect designed a beautiful building.", exampleThai:"สถาปนิกออกแบบอาคารสวยงาม", rhymeGroup:"ect" },
+  { id:466, word:"programmer", phonetic:"/ˈproʊɡræmər/", thai:"โปรแกรมเมอร์", category:"work", level:"B1", rhyme:"โปร แกรม เมอร์ เขียน โค้ด สร้าง โปรแกรม", example:"Programmers write computer code.", exampleThai:"โปรแกรมเมอร์เขียนโค้ดคอมพิวเตอร์", rhymeGroup:"er" },
+  { id:467, word:"accountant", phonetic:"/əˈkaʊntənt/", thai:"นักบัญชี", category:"work", level:"B1", rhyme:"นัก บัญ ชี ดูแล ตัว เลข ให้ ถูก ต้อง", example:"The accountant checks the numbers.", exampleThai:"นักบัญชีตรวจสอบตัวเลข", rhymeGroup:"ant" },
+  { id:468, word:"volunteer", phonetic:"/ˌvɒlənˈtɪər/", thai:"อาสาสมัคร", category:"work", level:"B1", rhyme:"อาสา สมัคร ช่วย ผู้ อื่น ด้วย ใจ กว้าง", example:"She volunteers at the hospital.", exampleThai:"เธอเป็นอาสาสมัครที่โรงพยาบาล", rhymeGroup:"eer" },
+  { id:469, word:"salary", phonetic:"/ˈsæləri/", thai:"เงินเดือน", category:"work", level:"B1", rhyme:"เงิน เดือน ตอบ แทน การ ทำ งาน หนัก", example:"His salary increased this year.", exampleThai:"เงินเดือนเขาเพิ่มขึ้นปีนี้", rhymeGroup:"y" },
+  { id:470, word:"interview", phonetic:"/ˈɪntəvjuː/", thai:"การสัมภาษณ์", category:"work", level:"B1", rhyme:"สัม ภาษณ์ งาน ตั้ง ใจ ตอบ ให้ ดี ที่สุด", example:"Prepare well for your interview.", exampleThai:"เตรียมตัวให้ดีสำหรับการสัมภาษณ์", rhymeGroup:"ew" },
+
+  // B1 - Health extras
+  { id:471, word:"vitamin", phonetic:"/ˈvɪtəmɪn/", thai:"วิตามิน", category:"health", level:"B1", rhyme:"วิ ตา มิน ช่วย ร่าง กาย แข็งแรง ดี", example:"Vitamins keep us healthy.", exampleThai:"วิตามินช่วยให้ร่างกายแข็งแรง", rhymeGroup:"in" },
+  { id:472, word:"allergy", phonetic:"/ˈælərdʒi/", thai:"การแพ้", category:"health", level:"B1", rhyme:"แพ้ อาหาร หรือ ยา ต้อง ระวัง มาก", example:"She has a peanut allergy.", exampleThai:"เธอแพ้ถั่วลิสง", rhymeGroup:"y" },
+  { id:473, word:"fever", phonetic:"/ˈfiːvər/", thai:"ไข้", category:"health", level:"A2", rhyme:"ไข้ ขึ้น สูง ดื่ม น้ำ มาก ๆ พัก ผ่อน", example:"She has a high fever.", exampleThai:"เธอมีไข้สูง", rhymeGroup:"er" },
+  { id:474, word:"cough", phonetic:"/kɒf/", thai:"ไอ", category:"health", level:"A2", rhyme:"ไอ มาก ต้อง พัก ผ่อน ดื่ม น้ำ อุ่น", example:"Cover your mouth when you cough.", exampleThai:"ปิดปากตอนไอ", rhymeGroup:"ough" },
+  { id:475, word:"headache", phonetic:"/ˈhedeɪk/", thai:"ปวดหัว", category:"health", level:"A2", rhyme:"ปวด หัว นอน พัก แล้ว ดี ขึ้น เอง", example:"I have a bad headache.", exampleThai:"ฉันปวดหัวมาก", rhymeGroup:"ache" },
+  { id:476, word:"injury", phonetic:"/ˈɪndʒəri/", thai:"การบาดเจ็บ", category:"health", level:"B1", rhyme:"บาด เจ็บ รีบ รักษา อย่า ปล่อย ทิ้ง ไว้", example:"He had a leg injury.", exampleThai:"เขาบาดเจ็บที่ขา", rhymeGroup:"y" },
+  { id:477, word:"pharmacy", phonetic:"/ˈfɑːməsi/", thai:"ร้านขายยา", category:"health", level:"B1", rhyme:"ร้าน ขาย ยา ซื้อ ยา รักษา ได้ ง่าย", example:"Buy medicine at the pharmacy.", exampleThai:"ซื้อยาที่ร้านขายยา", rhymeGroup:"y" },
+  { id:478, word:"ambulance", phonetic:"/ˈæmbjələns/", thai:"รถพยาบาล", category:"health", level:"B1", rhyme:"รถ พยาบาล ช่วย เหลือ ฉุก เฉิน ได้ เร็ว", example:"Call an ambulance immediately.", exampleThai:"โทรเรียกรถพยาบาลทันที", rhymeGroup:"ance" },
+
+  // B1 - More Environment
+  { id:479, word:"rainforest", phonetic:"/ˈreɪnfɒrɪst/", thai:"ป่าฝน", category:"environment", level:"B1", rhyme:"ป่า ฝน ร่ม ชื้น สัตว์ นก นา นา ชนิด", example:"The rainforest is full of life.", exampleThai:"ป่าฝนเต็มไปด้วยสิ่งมีชีวิต", rhymeGroup:"est" },
+  { id:480, word:"extinct", phonetic:"/ɪkˈstɪŋkt/", thai:"สูญพันธุ์", category:"environment", level:"B1", rhyme:"สูญ พันธุ์ แล้ว ไม่ มี วัน กลับ มา", example:"Dinosaurs are now extinct.", exampleThai:"ไดโนเสาร์สูญพันธุ์แล้ว", rhymeGroup:"inct" },
+  { id:481, word:"solar", phonetic:"/ˈsoʊlər/", thai:"พลังงานแสงอาทิตย์", category:"environment", level:"B1", rhyme:"พลัง งาน แสง อาทิตย์ สะอาด ช่วย โลก ดี", example:"Solar power is clean energy.", exampleThai:"พลังงานแสงอาทิตย์เป็นพลังงานสะอาด", rhymeGroup:"ar" },
+  { id:482, word:"plastic", phonetic:"/ˈplæstɪk/", thai:"พลาสติก", category:"environment", level:"A2", rhyme:"พลาส ติก ทำ ลาย โลก ต้อง ลด การ ใช้", example:"Use less plastic every day.", exampleThai:"ลดการใช้พลาสติกทุกวัน", rhymeGroup:"ic" },
+  { id:483, word:"carbon", phonetic:"/ˈkɑːbən/", thai:"คาร์บอน", category:"environment", level:"B2", rhyme:"คาร์ บอน ปล่อย มาก โลก ร้อน ขึ้น ทุก วัน", example:"Reduce your carbon footprint.", exampleThai:"ลดการปล่อยคาร์บอนของคุณ", rhymeGroup:"on" },
+  { id:484, word:"wildlife", phonetic:"/ˈwaɪldlaɪf/", thai:"สัตว์ป่า", category:"environment", level:"B1", rhyme:"สัตว์ ป่า ควร ปกป้อง ไว้ อย่า ทำ ลาย", example:"Protect the wildlife.", exampleThai:"ปกป้องสัตว์ป่า", rhymeGroup:"ife" },
+  { id:485, word:"sustainable", phonetic:"/səˈsteɪnəbl/", thai:"ยั่งยืน", category:"environment", level:"B2", rhyme:"ยั่ง ยืน ทำ ดี เพื่อ โลก ทุก วัน ไป", example:"Live a sustainable lifestyle.", exampleThai:"ใช้ชีวิตอย่างยั่งยืน", rhymeGroup:"le" },
+
+  // B1 - More Society
+  { id:486, word:"democracy", phonetic:"/dɪˈmɒkrəsi/", thai:"ประชาธิปไตย", category:"society", level:"B2", rhyme:"ประชา ธิปไตย อำนาจ ของ ประชา ชน", example:"Democracy gives people a voice.", exampleThai:"ประชาธิปไตยให้เสียงแก่ประชาชน", rhymeGroup:"y" },
+  { id:487, word:"human right", phonetic:"/ˈhjuːmən raɪt/", thai:"สิทธิมนุษยชน", category:"society", level:"B2", rhyme:"สิทธิ มนุษย ชน ทุก คน ต้อง ได้ รับ", example:"Everyone has human rights.", exampleThai:"ทุกคนมีสิทธิมนุษยชน", rhymeGroup:"ight" },
+  { id:488, word:"charity", phonetic:"/ˈtʃærəti/", thai:"การกุศล", category:"society", level:"B1", rhyme:"การ กุศล ช่วย ผู้ ด้อย โอกาส ด้วย ใจ", example:"Give to charity every month.", exampleThai:"บริจาคการกุศลทุกเดือน", rhymeGroup:"y" },
+  { id:489, word:"immigrant", phonetic:"/ˈɪmɪɡrənt/", thai:"ผู้อพยพ", category:"society", level:"B2", rhyme:"ผู้ อพยพ เดิน ทาง หา ชีวิต ที่ ดี", example:"Immigrants bring new ideas.", exampleThai:"ผู้อพยพนำแนวคิดใหม่มา", rhymeGroup:"ant" },
+  { id:490, word:"generation", phonetic:"/ˌdʒenəˈreɪʃn/", thai:"รุ่น/ยุคสมัย", category:"society", level:"B1", rhyme:"รุ่น ต่อ รุ่น ส่ง ต่อ สิ่ง ดี ไว้ เสมอ", example:"Each generation learns from the past.", exampleThai:"แต่ละรุ่นเรียนรู้จากอดีต", rhymeGroup:"on" },
+
+  // B2 - Academic & Formal
+  { id:491, word:"analyse", phonetic:"/ˈænəlaɪz/", thai:"วิเคราะห์", category:"school", level:"B2", rhyme:"วิ เคราะห์ ข้อมูล อย่าง ละเอียด ถี่ ถ้วน", example:"Analyse the data carefully.", exampleThai:"วิเคราะห์ข้อมูลอย่างรอบคอบ", rhymeGroup:"ize" },
+  { id:492, word:"conclusion", phonetic:"/kənˈkluːʒn/", thai:"บทสรุป", category:"school", level:"B1", rhyme:"บท สรุป ชัด เจน ดี ผล สรุป ออก มา", example:"Write a clear conclusion.", exampleThai:"เขียนบทสรุปที่ชัดเจน", rhymeGroup:"on" },
+  { id:493, word:"evidence", phonetic:"/ˈevɪdəns/", thai:"หลักฐาน", category:"school", level:"B1", rhyme:"หลัก ฐาน พิสูจน์ ความ จริง ให้ ชัด เจน", example:"Show evidence to support your idea.", exampleThai:"แสดงหลักฐานสนับสนุนความคิด", rhymeGroup:"ence" },
+  { id:494, word:"debate", phonetic:"/dɪˈbeɪt/", thai:"การโต้วาที", category:"school", level:"B1", rhyme:"โต้ วา ที แสดง ความ คิด เห็น อย่าง มี เหตุ ผล", example:"Join the school debate team.", exampleThai:"เข้าร่วมทีมโต้วาทีของโรงเรียน", rhymeGroup:"ate" },
+  { id:495, word:"hypothesis", phonetic:"/haɪˈpɒθəsɪs/", thai:"สมมติฐาน", category:"school", level:"B2", rhyme:"สมมติ ฐาน ตั้ง ไว้ ก่อน แล้ว พิสูจน์", example:"Test your hypothesis with experiments.", exampleThai:"ทดสอบสมมติฐานด้วยการทดลอง", rhymeGroup:"is" },
+
+  // B1 - More Adjectives
+  { id:496, word:"reliable", phonetic:"/rɪˈlaɪəbl/", thai:"เชื่อถือได้", category:"adjectives", level:"B1", rhyme:"เชื่อ ถือ ได้ ไว้ ใจ ได้ แน่ เสมอ", example:"Be a reliable friend.", exampleThai:"จงเป็นเพื่อนที่ไว้วางใจได้", rhymeGroup:"le" },
+  { id:497, word:"efficient", phonetic:"/ɪˈfɪʃnt/", thai:"มีประสิทธิภาพ", category:"adjectives", level:"B1", rhyme:"มี ประสิทธิ ภาพ ทำ งาน ได้ ผล ดี", example:"Work in an efficient way.", exampleThai:"ทำงานอย่างมีประสิทธิภาพ", rhymeGroup:"ent" },
+  { id:498, word:"ambitious", phonetic:"/æmˈbɪʃəs/", thai:"ทะเยอทะยาน", category:"adjectives", level:"B1", rhyme:"ทะ เยอ ทะ ยาน มุ่ง มั่น ไปสู่ ยอด สูง", example:"Be ambitious and work hard.", exampleThai:"จงมีความทะเยอทะยานและทำงานหนัก", rhymeGroup:"ous" },
+  { id:499, word:"logical", phonetic:"/ˈlɒdʒɪkl/", thai:"มีเหตุผล", category:"adjectives", level:"B1", rhyme:"มี เหตุ ผล คิด อย่าง เป็น ระบบ", example:"Think in a logical way.", exampleThai:"คิดอย่างมีเหตุผล", rhymeGroup:"al" },
+  { id:500, word:"independent", phonetic:"/ˌɪndɪˈpendənt/", thai:"พึ่งพาตนเอง", category:"adjectives", level:"B1", rhyme:"พึ่ง พา ตน เอง ได้ แข็งแรง ทุก ด้าน", example:"Be independent and strong.", exampleThai:"จงพึ่งพาตนเองและแข็งแกร่ง", rhymeGroup:"ent" },
+  { id:501, word:"intelligent", phonetic:"/ɪnˈtelɪdʒənt/", thai:"ฉลาด", category:"adjectives", level:"A2", rhyme:"ฉลาด เฉลียว รู้ ไว คิด เป็น ทุก เรื่อง", example:"She is very intelligent.", exampleThai:"เธอฉลาดมาก", rhymeGroup:"ent" },
+  { id:502, word:"curious", phonetic:"/ˈkjʊəriəs/", thai:"อยากรู้อยากเห็น", category:"adjectives", level:"B1", rhyme:"อยาก รู้ อยาก เห็น ถาม ดี กว่า ไม่ รู้", example:"Stay curious about the world.", exampleThai:"จงอยากรู้อยากเห็นเกี่ยวกับโลก", rhymeGroup:"ous" },
+  { id:503, word:"responsible", phonetic:"/rɪˈspɒnsɪbl/", thai:"รับผิดชอบ", category:"adjectives", level:"B1", rhyme:"รับ ผิด ชอบ ต่อ งาน ตัว เอง ทุก อย่าง", example:"Be responsible for your actions.", exampleThai:"รับผิดชอบต่อการกระทำของตนเอง", rhymeGroup:"le" },
+
+  // B1 - More Verbs
+  { id:504, word:"achieve", phonetic:"/əˈtʃiːv/", thai:"บรรลุ/สำเร็จ", category:"actions", level:"B1", rhyme:"บรรลุ เป้า หมาย ด้วย ความ พยายาม", example:"You can achieve anything.", exampleThai:"คุณสามารถบรรลุทุกอย่างได้", rhymeGroup:"ieve" },
+  { id:505, word:"improve", phonetic:"/ɪmˈpruːv/", thai:"ปรับปรุง", category:"actions", level:"A2", rhyme:"ปรับ ปรุง ตัว เอง ทุก วัน ดี กว่า เดิม", example:"Improve your skills every day.", exampleThai:"ปรับปรุงทักษะทุกวัน", rhymeGroup:"oove" },
+  { id:506, word:"communicate", phonetic:"/kəˈmjuːnɪkeɪt/", thai:"สื่อสาร", category:"actions", level:"B1", rhyme:"สื่อ สาร ชัด เจน เข้า ใจ กัน ดี งาม", example:"Communicate clearly with others.", exampleThai:"สื่อสารอย่างชัดเจนกับผู้อื่น", rhymeGroup:"ate" },
+  { id:507, word:"discover", phonetic:"/dɪˈskʌvər/", thai:"ค้นพบ", category:"actions", level:"A2", rhyme:"ค้น พบ สิ่ง ใหม่ ทุก วัน น่า ตื่น เต้น", example:"Discover new things every day.", exampleThai:"ค้นพบสิ่งใหม่ทุกวัน", rhymeGroup:"er" },
+  { id:508, word:"protect", phonetic:"/prəˈtekt/", thai:"ปกป้อง", category:"actions", level:"B1", rhyme:"ปก ป้อง คน ที่ รัก ด้วย ใจ กว้าง", example:"Protect the ones you love.", exampleThai:"ปกป้องคนที่คุณรัก", rhymeGroup:"ect" },
+  { id:509, word:"support", phonetic:"/səˈpɔːt/", thai:"สนับสนุน", category:"actions", level:"B1", rhyme:"สนับ สนุน กัน และ กัน ดี ที่สุด", example:"Support your friends always.", exampleThai:"สนับสนุนเพื่อนเสมอ", rhymeGroup:"ort" },
+  { id:510, word:"solve", phonetic:"/sɒlv/", thai:"แก้ปัญหา", category:"actions", level:"B1", rhyme:"แก้ ปัญหา ด้วย ใจ เย็น ได้ ผล ดี", example:"Solve problems step by step.", exampleThai:"แก้ปัญหาทีละขั้นตอน", rhymeGroup:"olve" },
+  { id:511, word:"create", phonetic:"/kriˈeɪt/", thai:"สร้างสรรค์", category:"actions", level:"B1", rhyme:"สร้าง สรรค์ สิ่ง ใหม่ ไม่มี ที่ สิ้น สุด", example:"Create something beautiful today.", exampleThai:"สร้างสรรค์บางอย่างที่สวยงามวันนี้", rhymeGroup:"ate" },
+  { id:512, word:"inspire", phonetic:"/ɪnˈspaɪər/", thai:"สร้างแรงบันดาลใจ", category:"actions", level:"B1", rhyme:"สร้าง แรง บัน ดาล ใจ ให้ ผู้ อื่น ได้", example:"Inspire others with your actions.", exampleThai:"สร้างแรงบันดาลใจให้ผู้อื่นด้วยการกระทำ", rhymeGroup:"ire" },
+  { id:513, word:"manage", phonetic:"/ˈmænɪdʒ/", thai:"จัดการ", category:"actions", level:"B1", rhyme:"จัด การ เรื่อง ราว ได้ ดี มี ระบบ", example:"Manage your time wisely.", exampleThai:"จัดการเวลาของคุณอย่างฉลาด", rhymeGroup:"age" },
+  { id:514, word:"investigate", phonetic:"/ɪnˈvestɪɡeɪt/", thai:"สืบสวน", category:"actions", level:"B1", rhyme:"สืบ สวน ค้น หา ความ จริง ให้ กระจ่าง", example:"Investigate the mystery.", exampleThai:"สืบสวนความลึกลับ", rhymeGroup:"ate" },
+  { id:515, word:"appreciate", phonetic:"/əˈpriːʃieɪt/", thai:"ชื่นชม/ขอบคุณ", category:"actions", level:"B1", rhyme:"ชื่น ชม คน อื่น บอก ขอบ คุณ ทุก วัน", example:"Appreciate what you have.", exampleThai:"ชื่นชมสิ่งที่คุณมี", rhymeGroup:"ate" },
+
+  // A2 - More Nature
+  { id:516, word:"jungle", phonetic:"/ˈdʒʌŋɡl/", thai:"ป่าดงดิบ", category:"nature", level:"A2", rhyme:"ป่า ดง ดิบ รก ชัฏ เต็ม สัตว์ น่า ค้น", example:"The jungle is full of wildlife.", exampleThai:"ป่าดงดิบเต็มไปด้วยสัตว์ป่า", rhymeGroup:"le" },
+  { id:517, word:"rainbow", phonetic:"/ˈreɪnboʊ/", thai:"รุ้ง", category:"nature", level:"A1", rhyme:"รุ้ง กินน้ำ เจ็ด สี สวย งาม หลัง ฝน", example:"A rainbow appeared after the rain.", exampleThai:"รุ้งปรากฏหลังจากฝนตก", rhymeGroup:"ow" },
+  { id:518, word:"earthquake", phonetic:"/ˈɜːθkweɪk/", thai:"แผ่นดินไหว", category:"nature", level:"B1", rhyme:"แผ่น ดิน ไหว สั่น สะท้าน ทุก ทิศ ทาง", example:"An earthquake can be very dangerous.", exampleThai:"แผ่นดินไหวอาจอันตรายมาก", rhymeGroup:"ake" },
+  { id:519, word:"glacier", phonetic:"/ˈɡlæsiər/", thai:"ธารน้ำแข็ง", category:"nature", level:"B2", rhyme:"ธาร น้ำ แข็ง เคลื่อน ช้า ลด ลง เพราะ โลก ร้อน", example:"Glaciers are melting fast.", exampleThai:"ธารน้ำแข็งกำลังละลายเร็ว", rhymeGroup:"er" },
+  { id:520, word:"horizon", phonetic:"/həˈraɪzn/", thai:"ขอบฟ้า", category:"nature", level:"B1", rhyme:"ขอบ ฟ้า กว้าง ไกล มอง แล้ว ใจ โล่ง สบาย", example:"The sun sets at the horizon.", exampleThai:"ดวงอาทิตย์ตกที่ขอบฟ้า", rhymeGroup:"on" },
+  { id:521, word:"petal", phonetic:"/ˈpetl/", thai:"กลีบดอกไม้", category:"nature", level:"B1", rhyme:"กลีบ ดอก ไม้ อ่อน บอบ บาง สวย งาม", example:"Rose petals are soft and red.", exampleThai:"กลีบกุหลาบนุ่มและแดง", rhymeGroup:"al" },
+  { id:522, word:"soil", phonetic:"/sɔɪl/", thai:"ดิน", category:"nature", level:"A2", rhyme:"ดิน ดี ต้นไม้ งอก งาม เติบ โต เร็ว", example:"Plants grow in good soil.", exampleThai:"ต้นไม้เติบโตในดินดี", rhymeGroup:"oil" },
+  { id:523, word:"tide", phonetic:"/taɪd/", thai:"น้ำขึ้นน้ำลง", category:"nature", level:"B1", rhyme:"น้ำ ขึ้น ลง ตาม ดวง จันทร์ ทุก วัน", example:"The tide comes in at night.", exampleThai:"น้ำขึ้นตอนกลางคืน", rhymeGroup:"ide" },
+
+  // A2 - Daily routines & Time
+  { id:524, word:"routine", phonetic:"/ruːˈtiːn/", thai:"กิจวัตรประจำวัน", category:"time", level:"A2", rhyme:"กิจ วัตร ทำ ทุก วัน ให้ ชีวิต มี ระบบ", example:"A good morning routine is important.", exampleThai:"กิจวัตรตอนเช้าที่ดีสำคัญ", rhymeGroup:"een" },
+  { id:525, word:"schedule", phonetic:"/ˈʃedjuːl/", thai:"ตารางเวลา", category:"time", level:"B1", rhyme:"ตา ราง เวลา จัด ให้ ชัด เจน ทำ ได้ ครบ", example:"Follow your schedule every day.", exampleThai:"ทำตามตารางเวลาทุกวัน", rhymeGroup:"le" },
+  { id:526, word:"deadline", phonetic:"/ˈdedlaɪn/", thai:"กำหนดเวลา", category:"time", level:"B1", rhyme:"กำ หนด เวลา อย่า ปล่อย ให้ ผ่าน ไป", example:"Meet the deadline on time.", exampleThai:"ทำให้เสร็จก่อนกำหนดเวลา", rhymeGroup:"ine" },
+  { id:527, word:"century", phonetic:"/ˈsentʃəri/", thai:"ศตวรรษ", category:"time", level:"A2", rhyme:"ศต วรรษ หนึ่ง ร้อย ปี ผ่าน ไป เร็ว นัก", example:"We are in the 21st century.", exampleThai:"เราอยู่ในศตวรรษที่ 21", rhymeGroup:"y" },
+  { id:528, word:"decade", phonetic:"/ˈdekeɪd/", thai:"ทศวรรษ", category:"time", level:"B1", rhyme:"ทศ วรรษ สิบ ปี เปลี่ยน แปลง มาก นัก", example:"A lot changes in a decade.", exampleThai:"หลายอย่างเปลี่ยนไปในหนึ่งทศวรรษ", rhymeGroup:"ade" },
+
+  // B2 - Advanced vocabulary
+  { id:529, word:"phenomenon", phonetic:"/fɪˈnɒmɪnən/", thai:"ปรากฏการณ์", category:"school", level:"B2", rhyme:"ปรากฏ การณ์ แปลก ใหม่ น่า ศึกษา", example:"It's a natural phenomenon.", exampleThai:"นั่นเป็นปรากฏการณ์ทางธรรมชาติ", rhymeGroup:"on" },
+  { id:530, word:"diversity", phonetic:"/daɪˈvɜːsɪti/", thai:"ความหลากหลาย", category:"society", level:"B2", rhyme:"ความ หลาก หลาย ทำ โลก สวย งาม มี สีสัน", example:"Diversity makes us stronger.", exampleThai:"ความหลากหลายทำให้เราแข็งแกร่งขึ้น", rhymeGroup:"y" },
+  { id:531, word:"innovation", phonetic:"/ˌɪnəˈveɪʃn/", thai:"นวัตกรรม", category:"technology", level:"B2", rhyme:"นวัต กรรม สร้าง สิ่ง ใหม่ เปลี่ยน โลก ได้", example:"Innovation drives progress.", exampleThai:"นวัตกรรมขับเคลื่อนความก้าวหน้า", rhymeGroup:"on" },
+  { id:532, word:"perspective", phonetic:"/pəˈspektɪv/", thai:"มุมมอง", category:"values", level:"B2", rhyme:"มุม มอง ต่าง กัน ทำ ให้ เรียน รู้ ดี", example:"See things from a new perspective.", exampleThai:"มองสิ่งต่างๆ จากมุมมองใหม่", rhymeGroup:"ive" },
+  { id:533, word:"consequence", phonetic:"/ˈkɒnsɪkwəns/", thai:"ผลที่ตามมา", category:"values", level:"B1", rhyme:"ผล ที่ ตาม มา จาก การ กระทำ ของ เรา", example:"Think about the consequences.", exampleThai:"คิดถึงผลที่จะตามมา", rhymeGroup:"ence" },
+  { id:534, word:"opportunity", phonetic:"/ˌɒpəˈtjuːnɪti/", thai:"โอกาส", category:"values", level:"B1", rhyme:"โอ กาส ดี คว้า ไว้ อย่า ปล่อย หลุด มือ", example:"Every day brings new opportunities.", exampleThai:"ทุกวันมีโอกาสใหม่", rhymeGroup:"y" },
+  { id:535, word:"ambition", phonetic:"/æmˈbɪʃn/", thai:"ความทะเยอทะยาน", category:"values", level:"B1", rhyme:"ทะ เยอ ทะ ยาน ดี ถ้า ทำ ด้วย ความ ขยัน", example:"Have ambition and work for it.", exampleThai:"มีความทะเยอทะยานและทำงานเพื่อมัน", rhymeGroup:"on" },
+  { id:536, word:"sacrifice", phonetic:"/ˈsækrɪfaɪs/", thai:"การเสียสละ", category:"values", level:"B2", rhyme:"เสีย สละ เพื่อ คน อื่น คือ ความ ยิ่ง ใหญ่", example:"Sometimes we must sacrifice.", exampleThai:"บางครั้งเราต้องเสียสละ", rhymeGroup:"ice" },
+  { id:537, word:"empathy", phonetic:"/ˈempəθi/", thai:"การเอาใจใส่ผู้อื่น", category:"values", level:"B2", rhyme:"เอา ใจ ใส่ ผู้ อื่น ทำ โลก น่า อยู่ ขึ้น", example:"Show empathy to others.", exampleThai:"แสดงความเห็นอกเห็นใจผู้อื่น", rhymeGroup:"y" },
+  { id:538, word:"integrity", phonetic:"/ɪnˈteɡrɪti/", thai:"ความซื่อตรง", category:"values", level:"B2", rhyme:"ซื่อ ตรง ทำ ดี แม้ ไม่ มี ใคร มอง", example:"Integrity means doing right.", exampleThai:"ความซื่อตรงหมายถึงการทำสิ่งที่ถูกต้อง", rhymeGroup:"y" },
+  { id:539, word:"perseverance", phonetic:"/ˌpɜːsɪˈvɪərəns/", thai:"ความมุมานะ", category:"values", level:"B2", rhyme:"มุ มา นะ ไม่ ยอม แพ้ ไม่ ว่า จะ ยาก", example:"Perseverance leads to success.", exampleThai:"ความมุมานะนำไปสู่ความสำเร็จ", rhymeGroup:"ance" },
+  { id:540, word:"wisdom", phonetic:"/ˈwɪzdəm/", thai:"ปัญญา/ความฉลาด", category:"values", level:"B2", rhyme:"ปัญ ญา เกิด จาก ประสบ การณ์ และ การ เรียน รู้", example:"Wisdom comes with experience.", exampleThai:"ปัญญาเกิดจากประสบการณ์", rhymeGroup:"om" },
+
+  // A1 - More family & relationships
+  { id:541, word:"grandma", phonetic:"/ˈɡrænmɑː/", thai:"ยาย/คุณยาย", category:"family", level:"A1", rhyme:"ยาย รัก หลาน มาก มีน้ำใจ ดี เสมอ", example:"I visit grandma every Sunday.", exampleThai:"ฉันไปหายายทุกวันอาทิตย์", rhymeGroup:"a" },
+  { id:542, word:"grandpa", phonetic:"/ˈɡrænpɑː/", thai:"ตา/คุณตา", category:"family", level:"A1", rhyme:"ตา เล่า นิทาน ให้ หลาน ฟัง ทุก คืน", example:"Grandpa tells great stories.", exampleThai:"คุณตาเล่าเรื่องราวที่น่าสนใจ", rhymeGroup:"a" },
+  { id:543, word:"uncle", phonetic:"/ˈʌŋkl/", thai:"ลุง/น้า/อา", category:"family", level:"A1", rhyme:"ลุง ใจ ดี ซื้อ ของ ขวัญ ให้ หลาน เสมอ", example:"My uncle is very funny.", exampleThai:"ลุงของฉันตลกมาก", rhymeGroup:"le" },
+  { id:544, word:"aunt", phonetic:"/ɑːnt/", thai:"ป้า/น้า/อา (ผู้หญิง)", category:"family", level:"A1", rhyme:"ป้า ใจ ดี ทำ อาหาร อร่อย มาก", example:"My aunt cooks delicious food.", exampleThai:"ป้าทำอาหารอร่อยมาก", rhymeGroup:"ant" },
+  { id:545, word:"cousin", phonetic:"/ˈkʌzn/", thai:"ลูกพี่ลูกน้อง", category:"family", level:"A1", rhyme:"ลูก พี่ ลูก น้อง เล่น สนุก ด้วย กัน", example:"My cousins visit us every holiday.", exampleThai:"ลูกพี่ลูกน้องมาเยี่ยมทุกวันหยุด", rhymeGroup:"in" },
+  { id:546, word:"neighbour", phonetic:"/ˈneɪbər/", thai:"เพื่อนบ้าน", category:"family", level:"A1", rhyme:"เพื่อน บ้าน ดี ช่วย เหลือ กัน ยาม ยาก", example:"My neighbour is very kind.", exampleThai:"เพื่อนบ้านของฉันใจดีมาก", rhymeGroup:"er" },
+  { id:547, word:"marriage", phonetic:"/ˈmærɪdʒ/", thai:"การแต่งงาน", category:"family", level:"B1", rhyme:"แต่ง งาน สร้าง ครอบครัว ใหม่ ด้วย รัก", example:"Marriage is a big commitment.", exampleThai:"การแต่งงานเป็นพันธสัญญาที่ยิ่งใหญ่", rhymeGroup:"age" },
+  { id:548, word:"friendship", phonetic:"/ˈfrendʃɪp/", thai:"มิตรภาพ", category:"family", level:"B1", rhyme:"มิตร ภาพ แท้ ไม่ เคย จาง หาย ไป", example:"True friendship lasts forever.", exampleThai:"มิตรภาพแท้ยืนยาวตลอดไป", rhymeGroup:"ip" },
+
+  // B1 - More abstract & academic
+  { id:549, word:"abstract", phonetic:"/ˈæbstrækt/", thai:"นามธรรม", category:"school", level:"B2", rhyme:"นาม ธรรม มอง ไม่ เห็น แต่ รู้ สึก ได้", example:"Love is an abstract concept.", exampleThai:"ความรักเป็นแนวคิดที่เป็นนามธรรม", rhymeGroup:"act" },
+  { id:550, word:"statistics", phonetic:"/stəˈtɪstɪks/", thai:"สถิติ", category:"school", level:"B2", rhyme:"สถิ ติ ตัว เลข บอก ความ จริง ได้ ชัด", example:"Statistics show the facts.", exampleThai:"สถิติแสดงข้อเท็จจริง", rhymeGroup:"ics" },
+  { id:551, word:"theory", phonetic:"/ˈθɪəri/", thai:"ทฤษฎี", category:"school", level:"B1", rhyme:"ทฤษ ฎี อธิ บาย ว่า ทำ ไม จึง เป็น เช่น นั้น", example:"Einstein's theory changed science.", exampleThai:"ทฤษฎีของไอน์สไตน์เปลี่ยนแปลงวิทยาศาสตร์", rhymeGroup:"y" },
+  { id:552, word:"experiment", phonetic:"/ɪkˈsperɪmənt/", thai:"การทดลอง", category:"school", level:"B1", rhyme:"การ ทดลอง พิสูจน์ ความ จริง ได้ ชัดเจน", example:"Do the experiment carefully.", exampleThai:"ทำการทดลองอย่างรอบคอบ", rhymeGroup:"ent" },
+  { id:553, word:"formula", phonetic:"/ˈfɔːmjʊlə/", thai:"สูตร", category:"school", level:"B1", rhyme:"สูตร คณิต ศาสตร์ ใช้ คำนวณ ได้ ถูก ต้อง", example:"Use the formula to solve this.", exampleThai:"ใช้สูตรในการแก้โจทย์", rhymeGroup:"a" },
+
+  // A2-B1 More useful everyday words
+  { id:554, word:"opinion", phonetic:"/əˈpɪnjən/", thai:"ความคิดเห็น", category:"communication", level:"A2", rhyme:"ความ คิด เห็น ต่าง กัน ดี ได้ เรียน รู้", example:"Share your opinion freely.", exampleThai:"แสดงความคิดเห็นอย่างอิสระ", rhymeGroup:"on" },
+  { id:555, word:"promise", phonetic:"/ˈprɒmɪs/", thai:"สัญญา", category:"communication", level:"A2", rhyme:"สัญ ญา แล้ว ต้อง ทำ ตาม อย่า ผิด คำ", example:"Keep your promises.", exampleThai:"รักษาคำสัญญา", rhymeGroup:"is" },
+  { id:556, word:"argument", phonetic:"/ˈɑːɡjʊmənt/", thai:"การโต้แย้ง", category:"communication", level:"B1", rhyme:"โต้ แย้ง ด้วย เหตุ ผล ดี กว่า ด้วย อารมณ์", example:"Win arguments with facts.", exampleThai:"ชนะการโต้แย้งด้วยข้อเท็จจริง", rhymeGroup:"ent" },
+  { id:557, word:"feedback", phonetic:"/ˈfiːdbæk/", thai:"ข้อเสนอแนะ", category:"communication", level:"B1", rhyme:"ข้อ เสนอ แนะ ดี ทำ ให้ ดี กว่า เดิม", example:"Give constructive feedback.", exampleThai:"ให้ข้อเสนอแนะที่สร้างสรรค์", rhymeGroup:"ack" },
+  { id:558, word:"attitude", phonetic:"/ˈætɪtjuːd/", thai:"ทัศนคติ", category:"values", level:"B1", rhyme:"ทัศ นะ คติ ดี ชีวิต ก็ ดี ตาม", example:"A positive attitude helps.", exampleThai:"ทัศนคติที่ดีช่วยได้", rhymeGroup:"ude" },
+  { id:559, word:"behaviour", phonetic:"/bɪˈheɪvjər/", thai:"พฤติกรรม", category:"values", level:"B1", rhyme:"พฤติ กรรม ดี ทำ ให้ ทุก คน ชอบ", example:"Good behaviour is important.", exampleThai:"พฤติกรรมที่ดีสำคัญมาก", rhymeGroup:"er" },
+  { id:560, word:"habit", phonetic:"/ˈhæbɪt/", thai:"นิสัย", category:"values", level:"A2", rhyme:"นิ สัย ดี สร้าง ตั้ง แต่ ยัง เด็ก ดี", example:"Build good habits early.", exampleThai:"สร้างนิสัยที่ดีตั้งแต่เนิ่นๆ", rhymeGroup:"it" },
+
+  // A1 - Prepositions & Common words
+  { id:561, word:"inside", phonetic:"/ˈɪnsaɪd/", thai:"ข้างใน", category:"prepositions", level:"A1", rhyme:"ข้าง ใน อุ่น อบ อุ่น กว่า ข้าง นอก", example:"Come inside, it's raining.", exampleThai:"เข้ามาข้างใน ฝนตก", rhymeGroup:"ide" },
+  { id:562, word:"outside", phonetic:"/ˈaʊtsaɪd/", thai:"ข้างนอก", category:"prepositions", level:"A1", rhyme:"ข้าง นอก อากาศ ดี ออก ไป เดิน เล่น", example:"Let's play outside.", exampleThai:"ออกไปเล่นข้างนอกกัน", rhymeGroup:"ide" },
+  { id:563, word:"above", phonetic:"/əˈbʌv/", thai:"เหนือ/ข้างบน", category:"prepositions", level:"A1", rhyme:"เหนือ ฟ้า สูง ดาว ระยิบ ระยับ งาม", example:"The bird flies above the tree.", exampleThai:"นกบินเหนือต้นไม้", rhymeGroup:"ove" },
+  { id:564, word:"below", phonetic:"/bɪˈloʊ/", thai:"ใต้/ข้างล่าง", category:"prepositions", level:"A1", rhyme:"ใต้ น้ำ ลึก ลับ ซ่อน สิ่ง มหัศจรรย์", example:"Fish swim below the surface.", exampleThai:"ปลาว่ายใต้ผิวน้ำ", rhymeGroup:"ow" },
+  { id:565, word:"between", phonetic:"/bɪˈtwiːn/", thai:"ระหว่าง", category:"prepositions", level:"A1", rhyme:"ระ หว่าง เรา สอง คน มี รัก แท้ เสมอ", example:"Sit between your friends.", exampleThai:"นั่งระหว่างเพื่อนๆ", rhymeGroup:"een" },
+  { id:566, word:"through", phonetic:"/θruː/", thai:"ผ่าน", category:"prepositions", level:"A1", rhyme:"ผ่าน อุปสรรค ไป ด้วย ความ เข้ม แข็ง", example:"Walk through the park.", exampleThai:"เดินผ่านสวนสาธารณะ", rhymeGroup:"oo" },
+  { id:567, word:"towards", phonetic:"/təˈwɔːdz/", thai:"ไปทาง", category:"prepositions", level:"A2", rhyme:"ก้าว ไป ทาง ฝัน ด้วย ใจ กล้า เสมอ", example:"Walk towards the door.", exampleThai:"เดินไปทางประตู", rhymeGroup:"ards" },
+  { id:568, word:"against", phonetic:"/əˈɡenst/", thai:"ต่อต้าน/พิง", category:"prepositions", level:"A2", rhyme:"ต้าน ทาน ความ ยาก เอาชนะ ได้ แน่", example:"Lean against the wall.", exampleThai:"พิงกำแพง", rhymeGroup:"inst" },
+
+  // A1 - Opposites / More adjectives
+  { id:569, word:"full", phonetic:"/fʊl/", thai:"เต็ม/อิ่ม", category:"adjectives", level:"A1", rhyme:"อิ่ม แล้ว ยิ้ม ด้วย ความ สุข ใจ", example:"My stomach is full.", exampleThai:"ท้องฉันอิ่มแล้ว", rhymeGroup:"ul" },
+  { id:570, word:"empty", phonetic:"/ˈempti/", thai:"ว่างเปล่า", category:"adjectives", level:"A1", rhyme:"ว่าง เปล่า รอ เติม ให้ เต็ม ด้วย ดี", example:"The box is empty.", exampleThai:"กล่องว่างเปล่า", rhymeGroup:"y" },
+  { id:571, word:"heavy", phonetic:"/ˈhevi/", thai:"หนัก", category:"adjectives", level:"A1", rhyme:"หนัก แต่ แบก ได้ ด้วย ใจ แข็ง กล้า", example:"This bag is very heavy.", exampleThai:"กระเป๋านี้หนักมาก", rhymeGroup:"y" },
+  { id:572, word:"light", phonetic:"/laɪt/", thai:"เบา/สว่าง", category:"adjectives", level:"A1", rhyme:"เบา สบาย ใจ เดิน ไป ได้ ไกล", example:"The feather is very light.", exampleThai:"ขนนกเบามาก", rhymeGroup:"ight" },
+  { id:573, word:"rich", phonetic:"/rɪtʃ/", thai:"ร่ำรวย", category:"adjectives", level:"A1", rhyme:"ร่ำ รวย ใจ ดี แบ่ง ปัน ดี กว่า เก็บ", example:"She is kind and rich.", exampleThai:"เธอใจดีและร่ำรวย", rhymeGroup:"ich" },
+  { id:574, word:"poor", phonetic:"/pɔːr/", thai:"ยากจน", category:"adjectives", level:"A1", rhyme:"ยาก จน แต่ ใจ ดี มี ค่า มาก กว่า ทอง", example:"Help the poor people.", exampleThai:"ช่วยเหลือคนยากจน", rhymeGroup:"oor" },
+  { id:575, word:"loud", phonetic:"/laʊd/", thai:"ดัง", category:"adjectives", level:"A1", rhyme:"ดัง มาก อย่า ลืม ระวัง คน อื่น ด้วย", example:"The music is very loud.", exampleThai:"เพลงดังมาก", rhymeGroup:"oud" },
+  { id:576, word:"quiet", phonetic:"/ˈkwaɪət/", thai:"เงียบ", category:"adjectives", level:"A1", rhyme:"เงียบ สงบ ใจ นิ่ง คิด ได้ ชัด เจน", example:"Please be quiet in the library.", exampleThai:"กรุณาเงียบในห้องสมุด", rhymeGroup:"et" },
+  { id:577, word:"sharp", phonetic:"/ʃɑːp/", thai:"คม/ฉลาด", category:"adjectives", level:"A2", rhyme:"คม กริบ ใช้ ระวัง อย่า ให้ บาด มือ", example:"The knife is very sharp.", exampleThai:"มีดคมมาก", rhymeGroup:"arp" },
+  { id:578, word:"smooth", phonetic:"/smuːð/", thai:"เรียบ/นุ่มนวล", category:"adjectives", level:"A2", rhyme:"เรียบ ลื่น สัมผัส นุ่ม มือ ชื่น ใจ", example:"The road is smooth.", exampleThai:"ถนนเรียบ", rhymeGroup:"ooth" },
+  { id:579, word:"rough", phonetic:"/rʌf/", thai:"หยาบ/ขรุขระ", category:"adjectives", level:"A2", rhyme:"ขรุ ขระ แต่ ก็ ทำ ให้ ไม่ ลื่น ดี", example:"The road is rough and bumpy.", exampleThai:"ถนนขรุขระและเป็นหลุม", rhymeGroup:"uff" },
+  { id:580, word:"fresh", phonetic:"/freʃ/", thai:"สด/สดชื่น", category:"adjectives", level:"A1", rhyme:"สด ชื่น อากาศ ดี หายใจ สะดวก", example:"The air is fresh in the forest.", exampleThai:"อากาศในป่าสดชื่น", rhymeGroup:"esh" },
+  { id:581, word:"wild", phonetic:"/waɪld/", thai:"ป่า/ป่าเถื่อน", category:"adjectives", level:"A2", rhyme:"ป่า เถื่อน อิสระ ไม่ มี ใคร ผูก มัด", example:"Wild animals live in nature.", exampleThai:"สัตว์ป่าอาศัยอยู่ในธรรมชาติ", rhymeGroup:"ild" },
+  { id:582, word:"gentle", phonetic:"/ˈdʒentl/", thai:"อ่อนโยน", category:"adjectives", level:"A2", rhyme:"อ่อน โยน ใจ ดี ทุก คน รัก ใคร", example:"Be gentle with animals.", exampleThai:"อ่อนโยนกับสัตว์", rhymeGroup:"le" },
+  { id:583, word:"nervous", phonetic:"/ˈnɜːvəs/", thai:"ประหม่า", category:"adjectives", level:"A2", rhyme:"ประ หม่า นิด หน่อย แต่ ทำ ได้ แน่ ๆ", example:"I feel nervous before the show.", exampleThai:"ฉันประหม่าก่อนขึ้นเวที", rhymeGroup:"us" },
+  { id:584, word:"jealous", phonetic:"/ˈdʒeləs/", thai:"อิจฉา", category:"adjectives", level:"B1", rhyme:"อิจ ฉา ไม่ ดี จง ดี ใจ ให้ คน อื่น", example:"Don't be jealous of others.", exampleThai:"อย่าอิจฉาคนอื่น", rhymeGroup:"us" },
+  { id:585, word:"embarrassed", phonetic:"/ɪmˈbærəst/", thai:"อาย", category:"adjectives", level:"B1", rhyme:"อาย นิด หน่อย แต่ เรียน รู้ แล้ว ดี ขึ้น", example:"I felt embarrassed in front of everyone.", exampleThai:"ฉันรู้สึกอายต่อหน้าทุกคน", rhymeGroup:"ed" },
+
+  // A2 - More numbers & math
+  { id:586, word:"zero", phonetic:"/ˈzɪərəʊ/", thai:"ศูนย์", category:"numbers", level:"A1", rhyme:"ศูนย์ เป็น จุด เริ่ม ต้น ของ ทุก สิ่ง", example:"The score was zero to zero.", exampleThai:"คะแนนเป็นศูนย์ต่อศูนย์", rhymeGroup:"o" },
+  { id:587, word:"dozen", phonetic:"/ˈdʌzn/", thai:"โหล (สิบสอง)", category:"numbers", level:"A2", rhyme:"โหล หนึ่ง สิบ สอง ชิ้น พอ ดี", example:"Buy a dozen eggs please.", exampleThai:"ซื้อไข่โหลหนึ่งนะ", rhymeGroup:"en" },
+  { id:588, word:"quarter", phonetic:"/ˈkwɔːtər/", thai:"หนึ่งในสี่", category:"numbers", level:"A2", rhyme:"หนึ่ง ใน สี่ ส่วน แบ่ง เท่า ๆ กัน", example:"Cut the apple into quarters.", exampleThai:"หั่นแอปเปิ้ลเป็นสี่ส่วน", rhymeGroup:"er" },
+  { id:589, word:"double", phonetic:"/ˈdʌbl/", thai:"สองเท่า", category:"numbers", level:"A2", rhyme:"สอง เท่า ดี กว่า จะ ได้ พอ กิน", example:"Double the recipe for more people.", exampleThai:"ทำสูตรเป็นสองเท่าสำหรับคนมากขึ้น", rhymeGroup:"le" },
+  { id:590, word:"half", phonetic:"/hɑːf/", thai:"ครึ่ง", category:"numbers", level:"A1", rhyme:"ครึ่ง หนึ่ง แบ่ง ปัน กัน ได้ อย่าง ยุติธรรม", example:"Give me half of your apple.", exampleThai:"ให้แอปเปิ้ลฉันครึ่งหนึ่ง", rhymeGroup:"alf" },
+
+  // B1 - More science & tech
+  { id:591, word:"gravity", phonetic:"/ˈɡrævɪti/", thai:"แรงโน้มถ่วง", category:"school", level:"B1", rhyme:"แรง โน้ม ถ่วง ดึง ทุก สิ่ง ลง สู่ พื้น", example:"Gravity keeps us on the ground.", exampleThai:"แรงโน้มถ่วงทำให้เราอยู่บนพื้น", rhymeGroup:"y" },
+  { id:592, word:"electricity", phonetic:"/ɪˌlekˈtrɪsɪti/", thai:"ไฟฟ้า", category:"school", level:"A2", rhyme:"ไฟ ฟ้า ส่อง สว่าง ทำ ให้ ชีวิต ดี ขึ้น", example:"Electricity powers our homes.", exampleThai:"ไฟฟ้าให้พลังงานแก่บ้านเรา", rhymeGroup:"y" },
+  { id:593, word:"oxygen", phonetic:"/ˈɒksɪdʒən/", thai:"ออกซิเจน", category:"school", level:"B1", rhyme:"ออก ซิ เจน หาย ใจ ได้ ชีวิต ยืน ยาว", example:"We need oxygen to breathe.", exampleThai:"เราต้องการออกซิเจนในการหายใจ", rhymeGroup:"en" },
+  { id:594, word:"molecule", phonetic:"/ˈmɒlɪkjuːl/", thai:"โมเลกุล", category:"school", level:"B2", rhyme:"โม เล กุล เล็ก มาก มอง ไม่ เห็น ด้วย ตา", example:"Water is made of molecules.", exampleThai:"น้ำประกอบด้วยโมเลกุล", rhymeGroup:"ule" },
+  { id:595, word:"atom", phonetic:"/ˈætəm/", thai:"อะตอม", category:"school", level:"B2", rhyme:"อะ ตอม เล็ก ที่สุด สร้าง สรรพ สิ่ง ทุก อย่าง", example:"Everything is made of atoms.", exampleThai:"ทุกสิ่งประกอบด้วยอะตอม", rhymeGroup:"om" },
+  { id:596, word:"digital", phonetic:"/ˈdɪdʒɪtl/", thai:"ดิจิทัล", category:"technology", level:"A2", rhyme:"ดิ จิ ทัล โลก ใหม่ ทุก อย่าง เป็น เลข", example:"We live in a digital world.", exampleThai:"เราอาศัยอยู่ในโลกดิจิทัล", rhymeGroup:"al" },
+  { id:597, word:"artificial", phonetic:"/ˌɑːtɪˈfɪʃl/", thai:"เทียม/ประดิษฐ์", category:"technology", level:"B2", rhyme:"ประ ดิษฐ์ ขึ้น มา ด้วย มือ และ ปัญญา", example:"Artificial intelligence is growing fast.", exampleThai:"ปัญญาประดิษฐ์กำลังเติบโตเร็ว", rhymeGroup:"al" },
+  { id:598, word:"robot", phonetic:"/ˈroʊbɒt/", thai:"หุ่นยนต์", category:"technology", level:"A2", rhyme:"หุ่น ยนต์ ทำ งาน แทน คน ได้ หลาย อย่าง", example:"Robots help us in factories.", exampleThai:"หุ่นยนต์ช่วยเราในโรงงาน", rhymeGroup:"ot" },
+  { id:599, word:"satellite", phonetic:"/ˈsætəlaɪt/", thai:"ดาวเทียม", category:"technology", level:"B1", rhyme:"ดาว เทียม โคจร รอบ โลก ส่ง สัญญาณ", example:"Satellites orbit the Earth.", exampleThai:"ดาวเทียมโคจรรอบโลก", rhymeGroup:"ite" },
+  { id:600, word:"application", phonetic:"/ˌæplɪˈkeɪʃn/", thai:"แอปพลิเคชัน", category:"technology", level:"A2", rhyme:"แอป พลิ เค ชัน ช่วย ทำ สิ่ง ต่าง ๆ ง่าย ขึ้น", example:"Download the application on your phone.", exampleThai:"โหลดแอปพลิเคชันในโทรศัพท์", rhymeGroup:"on" },
+
+  // A1-A2 - More places
+  { id:601, word:"supermarket", phonetic:"/ˈsuːpəmɑːkɪt/", thai:"ซูเปอร์มาร์เก็ต", category:"places", level:"A1", rhyme:"ซูเปอร์ มาร์ เก็ต ซื้อ ของ ครบ ใน ที่ เดียว", example:"Buy food at the supermarket.", exampleThai:"ซื้ออาหารที่ซูเปอร์มาร์เก็ต", rhymeGroup:"et" },
+  { id:602, word:"stadium", phonetic:"/ˈsteɪdiəm/", thai:"สนามกีฬา", category:"places", level:"A2", rhyme:"สนาม กีฬา เต็ม ไป ด้วย เสียง เชียร์", example:"The stadium was full of fans.", exampleThai:"สนามกีฬาเต็มไปด้วยแฟนๆ", rhymeGroup:"um" },
+  { id:603, word:"zoo", phonetic:"/zuː/", thai:"สวนสัตว์", category:"places", level:"A1", rhyme:"สวน สัตว์ เด็ก ๆ ชอบ ไป ดู สัตว์ หลาก", example:"Let's go to the zoo!", exampleThai:"ไปสวนสัตว์กัน!", rhymeGroup:"oo" },
+  { id:604, word:"gym", phonetic:"/dʒɪm/", thai:"ยิม/ห้องออกกำลังกาย", category:"places", level:"A2", rhyme:"ยิม ออก กำลัง กาย แข็งแรง ทุก วัน", example:"I go to the gym three times a week.", exampleThai:"ฉันไปยิมสามครั้งต่อสัปดาห์", rhymeGroup:"im" },
+  { id:605, word:"cinema", phonetic:"/ˈsɪnəmə/", thai:"โรงภาพยนตร์", category:"places", level:"A1", rhyme:"โรง หนัง ดู ภาพยนตร์ สนุก สนาน ดี", example:"Let's watch a film at the cinema.", exampleThai:"ไปดูหนังที่โรงภาพยนตร์กัน", rhymeGroup:"a" },
+  { id:606, word:"pharmacy", phonetic:"/ˈfɑːməsi/", thai:"ร้านขายยา", category:"places", level:"B1", rhyme:"ร้าน ขาย ยา ซื้อ ยา แก้ อาการ ป่วย", example:"The pharmacy closes at 9pm.", exampleThai:"ร้านขายยาปิดสี่ทุ่ม", rhymeGroup:"y" },
+  { id:607, word:"post office", phonetic:"/ˈpoʊst ɒfɪs/", thai:"ที่ทำการไปรษณีย์", category:"places", level:"A2", rhyme:"ที่ทำ การ ไปรษณีย์ ส่ง จดหมาย ถึง ใจ", example:"Send the parcel at the post office.", exampleThai:"ส่งพัสดุที่ไปรษณีย์", rhymeGroup:"is" },
+  { id:608, word:"bakery", phonetic:"/ˈbeɪkəri/", thai:"ร้านเบเกอรี่", category:"places", level:"A2", rhyme:"เบ เก อ รี่ กลิ่น ขนม อบ หอม ชวน กิน", example:"I buy bread at the bakery.", exampleThai:"ฉันซื้อขนมปังที่เบเกอรี่", rhymeGroup:"y" },
+  { id:609, word:"temple", phonetic:"/ˈtempl/", thai:"วัด", category:"places", level:"A2", rhyme:"วัด สง่า งาม สถาน ปฏิบัติ ธรรม ดี", example:"Many tourists visit Thai temples.", exampleThai:"นักท่องเที่ยวหลายคนมาเยี่ยมวัดไทย", rhymeGroup:"le" },
+  { id:610, word:"countryside", phonetic:"/ˈkʌntrisaɪd/", thai:"ชนบท", category:"places", level:"B1", rhyme:"ชน บท สงบ เงียบ อากาศ บริสุทธิ์ ดี", example:"Life in the countryside is peaceful.", exampleThai:"ชีวิตในชนบทสงบสุข", rhymeGroup:"ide" },
+
+  // A2 - Describing people
+  { id:611, word:"blonde", phonetic:"/blɒnd/", thai:"สีบลอนด์/ผมสีทอง", category:"appearance", level:"A2", rhyme:"ผม บลอนด์ สีทอง สวย งาม โดด เด่น", example:"She has blonde hair.", exampleThai:"เธอมีผมสีบลอนด์", rhymeGroup:"ond" },
+  { id:612, word:"curly", phonetic:"/ˈkɜːli/", thai:"หยิก", category:"appearance", level:"A2", rhyme:"ผม หยิก น่า รัก ดู มี เสน่ห์ งาม", example:"He has curly black hair.", exampleThai:"เขามีผมหยิกสีดำ", rhymeGroup:"y" },
+  { id:613, word:"slim", phonetic:"/slɪm/", thai:"ผอมบาง", category:"appearance", level:"A2", rhyme:"ผอม บาง แต่ ต้อง แข็งแรง สุขภาพ ดี", example:"She is tall and slim.", exampleThai:"เธอสูงและผอมบาง", rhymeGroup:"im" },
+  { id:614, word:"muscular", phonetic:"/ˈmʌskjʊlər/", thai:"กล้ามเป็นมัด", category:"appearance", level:"B1", rhyme:"กล้าม เป็น มัด ออก กำลัง กาย สม่ำ เสมอ", example:"He is very muscular.", exampleThai:"เขากล้ามเป็นมัดมาก", rhymeGroup:"ar" },
+  { id:615, word:"elderly", phonetic:"/ˈeldəli/", thai:"สูงอายุ", category:"appearance", level:"B1", rhyme:"สูง อายุ มาก ประสบ การณ์ ล้ำ เลิศ", example:"Respect elderly people.", exampleThai:"เคารพผู้สูงอายุ", rhymeGroup:"y" },
+  { id:616, word:"handsome", phonetic:"/ˈhænsəm/", thai:"หล่อ", category:"appearance", level:"A2", rhyme:"หล่อ ดู ดี แต่ ใจ ดี ยิ่ง กว่า", example:"He is very handsome.", exampleThai:"เขาหล่อมาก", rhymeGroup:"ome" },
+  { id:617, word:"pretty", phonetic:"/ˈprɪti/", thai:"สวย", category:"appearance", level:"A1", rhyme:"สวย ดั่ง ดอก ไม้ บาน ใน ยาม เช้า", example:"She looks very pretty today.", exampleThai:"วันนี้เธอสวยมาก", rhymeGroup:"y" },
+  { id:618, word:"freckles", phonetic:"/ˈfreklz/", thai:"ฝ้า/กระ", category:"appearance", level:"B1", rhyme:"กระ บน หน้า น่า รัก ดู มี เสน่ห์", example:"She has cute freckles.", exampleThai:"เธอมีกระที่น่ารัก", rhymeGroup:"les" },
+
+  // A2-B1 More verbs (everyday)
+  { id:619, word:"miss", phonetic:"/mɪs/", thai:"คิดถึง/พลาด", category:"actions", level:"A1", rhyme:"คิด ถึง คน ที่ รัก อยู่ ไกล แสน ไกล", example:"I miss my family.", exampleThai:"ฉันคิดถึงครอบครัว", rhymeGroup:"iss" },
+  { id:620, word:"accept", phonetic:"/əkˈsept/", thai:"ยอมรับ", category:"actions", level:"B1", rhyme:"ยอม รับ ความ จริง แล้ว ก้าว ต่อ ไป", example:"Accept your mistakes and learn.", exampleThai:"ยอมรับข้อผิดพลาดและเรียนรู้", rhymeGroup:"ept" },
+  { id:621, word:"refuse", phonetic:"/rɪˈfjuːz/", thai:"ปฏิเสธ", category:"actions", level:"B1", rhyme:"ปฏิ เสธ สิ่ง ไม่ ดี กล้า พูด ว่า ไม่", example:"Refuse things that are bad for you.", exampleThai:"ปฏิเสธสิ่งที่ไม่ดีต่อคุณ", rhymeGroup:"ooze" },
+  { id:622, word:"complain", phonetic:"/kəmˈpleɪn/", thai:"บ่น/ร้องเรียน", category:"actions", level:"B1", rhyme:"บ่น น้อย ลง ดี กว่า แก้ ปัญหา ดี กว่า", example:"Don't complain, find a solution.", exampleThai:"อย่าบ่น หาทางออกดีกว่า", rhymeGroup:"ain" },
+  { id:623, word:"apologize", phonetic:"/əˈpɒlədʒaɪz/", thai:"ขอโทษ", category:"actions", level:"B1", rhyme:"ขอ โทษ ด้วย ใจ จริง ดี กว่า นิ่ง เฉย", example:"Apologize when you make a mistake.", exampleThai:"ขอโทษเมื่อทำผิด", rhymeGroup:"ize" },
+  { id:624, word:"forgive", phonetic:"/fəˈɡɪv/", thai:"ให้อภัย", category:"actions", level:"B1", rhyme:"ให้ อภัย ใจ โล่ง สบาย ทุก คน ดี ขึ้น", example:"Forgive and move forward.", exampleThai:"ให้อภัยและก้าวต่อไป", rhymeGroup:"ive" },
+  { id:625, word:"borrow", phonetic:"/ˈbɒroʊ/", thai:"ยืม", category:"actions", level:"A1", rhyme:"ยืม ของ แล้ว คืน ให้ ถ้วน ถี่ อย่า ลืม", example:"Can I borrow your pen?", exampleThai:"ขอยืมปากกาได้ไหม?", rhymeGroup:"ow" },
+  { id:626, word:"lend", phonetic:"/lend/", thai:"ให้ยืม", category:"actions", level:"A2", rhyme:"ให้ ยืม ด้วย ใจ กว้าง ดี คน น่า รัก", example:"I'll lend you my book.", exampleThai:"ฉันจะให้ยืมหนังสือ", rhymeGroup:"end" },
+  { id:627, word:"waste", phonetic:"/weɪst/", thai:"สิ้นเปลือง/ทิ้ง", category:"actions", level:"B1", rhyme:"สิ้น เปลือง อย่า ทำ ใช้ ให้ คุ้ม ค่า", example:"Don't waste food or water.", exampleThai:"อย่าสิ้นเปลืองอาหารหรือน้ำ", rhymeGroup:"aste" },
+  { id:628, word:"earn", phonetic:"/ɜːn/", thai:"หาเงิน/ได้รับ", category:"actions", level:"B1", rhyme:"หา เงิน ด้วย ความ ขยัน มี เกียรติ ยศ", example:"Work hard to earn money.", exampleThai:"ทำงานหนักเพื่อหาเงิน", rhymeGroup:"ern" },
+  { id:629, word:"save", phonetic:"/seɪv/", thai:"ออม/ช่วย", category:"actions", level:"A1", rhyme:"ออม เงิน ไว้ วัน ข้าง หน้า จะ ขอบ คุณ", example:"Save money for the future.", exampleThai:"ออมเงินเพื่ออนาคต", rhymeGroup:"ave" },
+  { id:630, word:"waste", phonetic:"/weɪst/", thai:"ของเสีย", category:"environment", level:"B1", rhyme:"ของ เสีย ต้อง จัด การ อย่าง ถูก วิธี", example:"Recycle your waste properly.", exampleThai:"รีไซเคิลของเสียอย่างถูกต้อง", rhymeGroup:"aste" },
+
+  // B1 - Media & News
+  { id:631, word:"headline", phonetic:"/ˈhedlaɪn/", thai:"พาดหัวข่าว", category:"communication", level:"B1", rhyme:"พาด หัว ข่าว ดึง ดูด ความ สนใจ ได้", example:"Read the headlines every morning.", exampleThai:"อ่านพาดหัวข่าวทุกเช้า", rhymeGroup:"ine" },
+  { id:632, word:"advertisement", phonetic:"/ədˈvɜːtɪsmənt/", thai:"โฆษณา", category:"communication", level:"B1", rhyme:"โฆษณา ดึง ดูด ให้ อยาก ซื้อ สินค้า", example:"The advertisement was on TV.", exampleThai:"โฆษณาออกทางโทรทัศน์", rhymeGroup:"ent" },
+  { id:633, word:"podcast", phonetic:"/ˈpɒdkɑːst/", thai:"พอดแคสต์", category:"communication", level:"B1", rhyme:"พอด แคสต์ ฟัง ได้ ทุก ที่ ทุก เวลา", example:"Listen to a podcast to learn.", exampleThai:"ฟังพอดแคสต์เพื่อเรียนรู้", rhymeGroup:"ast" },
+  { id:634, word:"broadcast", phonetic:"/ˈbrɔːdkɑːst/", thai:"กระจายเสียง/ถ่ายทอด", category:"communication", level:"B1", rhyme:"กระ จาย เสียง ข่าว สาร ทั่ว ทุก มุม โลก", example:"They broadcast the game live.", exampleThai:"พวกเขาถ่ายทอดสดเกม", rhymeGroup:"ast" },
+  { id:635, word:"social media", phonetic:"/ˈsoʊʃl ˈmiːdiə/", thai:"สื่อสังคมออนไลน์", category:"technology", level:"A2", rhyme:"สื่อ สังคม ออน ไลน์ เชื่อม คน ทั่ว โลก", example:"Use social media wisely.", exampleThai:"ใช้สื่อสังคมออนไลน์อย่างฉลาด", rhymeGroup:"a" },
+
+  // B1 - More health & body
+  { id:636, word:"breathe", phonetic:"/briːð/", thai:"หายใจ", category:"health", level:"A2", rhyme:"หาย ใจ ลึก ๆ สงบ ใจ ได้ ดี", example:"Breathe deeply to relax.", exampleThai:"หายใจลึกๆ เพื่อผ่อนคลาย", rhymeGroup:"eethe" },
+  { id:637, word:"pulse", phonetic:"/pʌls/", thai:"ชีพจร", category:"health", level:"B1", rhyme:"ชีพ จร เต้น สม่ำ เสมอ ร่างกาย ดี", example:"Check your pulse after exercise.", exampleThai:"ตรวจชีพจรหลังออกกำลังกาย", rhymeGroup:"ulse" },
+  { id:638, word:"mental", phonetic:"/ˈmentl/", thai:"จิตใจ", category:"health", level:"B1", rhyme:"จิต ใจ ดี ร่างกาย แข็งแรง ไป ด้วย", example:"Mental health is very important.", exampleThai:"สุขภาพจิตสำคัญมาก", rhymeGroup:"al" },
+  { id:639, word:"stress", phonetic:"/stres/", thai:"ความเครียด", category:"health", level:"B1", rhyme:"ความ เครียด ลด ลง ได้ ถ้า พัก ผ่อน ดี", example:"Manage stress with exercise.", exampleThai:"จัดการความเครียดด้วยการออกกำลังกาย", rhymeGroup:"ess" },
+  { id:640, word:"nutrition", phonetic:"/njuːˈtrɪʃn/", thai:"โภชนาการ", category:"health", level:"B1", rhyme:"โภชนา การ ดี ร่างกาย แข็งแรง นาน", example:"Good nutrition keeps you healthy.", exampleThai:"โภชนาการที่ดีทำให้สุขภาพดี", rhymeGroup:"on" },
+  { id:641, word:"protein", phonetic:"/ˈproʊtiːn/", thai:"โปรตีน", category:"health", level:"B1", rhyme:"โปร ตีน สร้าง กล้าม เนื้อ แข็งแรง ดี", example:"Eat protein to build muscles.", exampleThai:"กินโปรตีนเพื่อสร้างกล้ามเนื้อ", rhymeGroup:"een" },
+  { id:642, word:"immune", phonetic:"/ɪˈmjuːn/", thai:"ภูมิคุ้มกัน", category:"health", level:"B2", rhyme:"ภูมิ คุ้ม กัน ดี ไม่ ป่วย บ่อย ดี", example:"Build a strong immune system.", exampleThai:"สร้างภูมิคุ้มกันที่แข็งแกร่ง", rhymeGroup:"oon" },
+
+  // A2 - Household items
+  { id:643, word:"curtain", phonetic:"/ˈkɜːtn/", thai:"ผ้าม่าน", category:"home", level:"A2", rhyme:"ผ้า ม่าน กัน แสง แดด ห้อง เย็น สบาย", example:"Close the curtains at night.", exampleThai:"ปิดผ้าม่านตอนกลางคืน", rhymeGroup:"ain" },
+  { id:644, word:"pillow", phonetic:"/ˈpɪloʊ/", thai:"หมอน", category:"home", level:"A1", rhyme:"หมอน นุ่ม นวล นอน หลับ ฝัน ดี ตลอด", example:"Use a soft pillow to sleep.", exampleThai:"ใช้หมอนนุ่มในการนอน", rhymeGroup:"ow" },
+  { id:645, word:"blanket", phonetic:"/ˈblæŋkɪt/", thai:"ผ้าห่ม", category:"home", level:"A1", rhyme:"ผ้า ห่ม อุ่น นุ่ม กัน หนาว ยาม คืน", example:"Use a blanket when it's cold.", exampleThai:"ใช้ผ้าห่มตอนอากาศหนาว", rhymeGroup:"et" },
+  { id:646, word:"shelf", phonetic:"/ʃelf/", thai:"ชั้นวาง", category:"home", level:"A2", rhyme:"ชั้น วาง ของ เรียง ราย เป็น ระเบียบ ดี", example:"Put the books on the shelf.", exampleThai:"วางหนังสือบนชั้นวาง", rhymeGroup:"elf" },
+  { id:647, word:"trash", phonetic:"/træʃ/", thai:"ขยะ", category:"home", level:"A1", rhyme:"ขยะ ทิ้ง ให้ ถูก ที่ โลก สะอาด ดี", example:"Put trash in the bin.", exampleThai:"ทิ้งขยะในถัง", rhymeGroup:"ash" },
+  { id:648, word:"broom", phonetic:"/bruːm/", thai:"ไม้กวาด", category:"home", level:"A1", rhyme:"ไม้ กวาด กวาด พื้น สะอาด บ้าน น่า อยู่", example:"Sweep the floor with a broom.", exampleThai:"กวาดพื้นด้วยไม้กวาด", rhymeGroup:"oom" },
+  { id:649, word:"washing machine", phonetic:"/ˈwɒʃɪŋ məˈʃiːn/", thai:"เครื่องซักผ้า", category:"home", level:"A2", rhyme:"เครื่อง ซัก ผ้า ช่วย งาน บ้าน ได้ มาก", example:"Put clothes in the washing machine.", exampleThai:"ใส่เสื้อผ้าในเครื่องซักผ้า", rhymeGroup:"een" },
+  { id:650, word:"microwave", phonetic:"/ˈmaɪkrəweɪv/", thai:"ไมโครเวฟ", category:"home", level:"A2", rhyme:"ไมโคร เวฟ อุ่น อาหาร ได้ เร็ว ดี", example:"Heat the food in the microwave.", exampleThai:"อุ่นอาหารในไมโครเวฟ", rhymeGroup:"ave" },
+
+  // B1 - Money & Finance
+  { id:651, word:"budget", phonetic:"/ˈbʌdʒɪt/", thai:"งบประมาณ", category:"shopping", level:"B1", rhyme:"งบ ประ มาณ วาง แผน ดี ไม่ เกิน ตัว", example:"Stick to your monthly budget.", exampleThai:"ทำตามงบประมาณรายเดือน", rhymeGroup:"et" },
+  { id:652, word:"income", phonetic:"/ˈɪnkʌm/", thai:"รายได้", category:"work", level:"B1", rhyme:"รายได้ ดี ชีวิต ก็ มี ความ สุข มาก", example:"Increase your income with new skills.", exampleThai:"เพิ่มรายได้ด้วยทักษะใหม่", rhymeGroup:"um" },
+  { id:653, word:"invest", phonetic:"/ɪnˈvest/", thai:"ลงทุน", category:"work", level:"B2", rhyme:"ลง ทุน ใน ตัว เอง ดี ที่สุด เสมอ", example:"Invest in your education.", exampleThai:"ลงทุนในการศึกษาของคุณ", rhymeGroup:"est" },
+  { id:654, word:"debt", phonetic:"/det/", thai:"หนี้สิน", category:"work", level:"B2", rhyme:"หนี้ สิน ต้อง รีบ ชำ ระ อย่า ปล่อย นาน", example:"Pay off your debts quickly.", exampleThai:"ชำระหนี้ให้เร็ว", rhymeGroup:"et" },
+  { id:655, word:"profit", phonetic:"/ˈprɒfɪt/", thai:"กำไร", category:"work", level:"B1", rhyme:"กำ ไร มา จาก การ ทำ งาน อย่าง ดี", example:"The business made a good profit.", exampleThai:"ธุรกิจมีกำไรดี", rhymeGroup:"it" },
+
+  // A2 - Describing location
+  { id:656, word:"corner", phonetic:"/ˈkɔːnər/", thai:"มุม", category:"places", level:"A2", rhyme:"มุม ห้อง เล็ก ๆ แต่ น่า นั่ง พัก ผ่อน", example:"The shop is on the corner.", exampleThai:"ร้านอยู่ที่หัวมุม", rhymeGroup:"er" },
+  { id:657, word:"district", phonetic:"/ˈdɪstrɪkt/", thai:"เขต/อำเภอ", category:"places", level:"B1", rhyme:"เขต เมือง เล็ก ใหญ่ ล้วน มี เสน่ห์ เฉพาะ", example:"Which district do you live in?", exampleThai:"คุณอยู่เขตไหน?", rhymeGroup:"ict" },
+  { id:658, word:"suburb", phonetic:"/ˈsʌbɜːb/", thai:"ชานเมือง", category:"places", level:"B1", rhyme:"ชาน เมือง สงบ เงียบ น่า อยู่ อาศัย", example:"Many families live in the suburbs.", exampleThai:"ครอบครัวหลายคนอาศัยอยู่ชานเมือง", rhymeGroup:"erb" },
+  { id:659, word:"landmark", phonetic:"/ˈlændmɑːk/", thai:"สถานที่สำคัญ", category:"travel", level:"B1", rhyme:"สถาน ที่ สำ คัญ บอก ตำ แหน่ง ได้ ชัด", example:"The temple is a famous landmark.", exampleThai:"วัดเป็นสถานที่สำคัญที่มีชื่อเสียง", rhymeGroup:"ark" },
+  { id:660, word:"attraction", phonetic:"/əˈtrækʃn/", thai:"สถานที่ท่องเที่ยว", category:"travel", level:"B1", rhyme:"สถาน ที่ ท่อง เที่ยว ดึง ดูด นัก ท่องเที่ยว", example:"This city has many attractions.", exampleThai:"เมืองนี้มีสถานที่ท่องเที่ยวมาก", rhymeGroup:"on" },
+
+  // B1 - More feelings & mindset
+  { id:661, word:"anxious", phonetic:"/ˈæŋkʃəs/", thai:"วิตกกังวล", category:"feelings", level:"B1", rhyme:"วิตก กังวล หาย ใจ ลึก ๆ แล้ว ใจ เย็น", example:"I feel anxious about the test.", exampleThai:"ฉันวิตกกังวลเรื่องการสอบ", rhymeGroup:"us" },
+  { id:662, word:"relieved", phonetic:"/rɪˈliːvd/", thai:"โล่งอก", category:"feelings", level:"B1", rhyme:"โล่ง อก แล้ว ใจ ชื่น ปัญหา ผ่าน ไป", example:"I felt relieved after the exam.", exampleThai:"ฉันโล่งอกหลังสอบ", rhymeGroup:"ieved" },
+  { id:663, word:"hopeful", phonetic:"/ˈhoʊpfl/", thai:"มีความหวัง", category:"feelings", level:"B1", rhyme:"มี ความ หวัง ทำ ให้ สู้ ต่อ ไป ได้", example:"Stay hopeful even in hard times.", exampleThai:"มีความหวังแม้ในช่วงเวลาที่ยาก", rhymeGroup:"ul" },
+  { id:664, word:"regret", phonetic:"/rɪˈɡret/", thai:"เสียใจ/เสียดาย", category:"feelings", level:"B1", rhyme:"เสีย ใจ กับ สิ่ง ที่ ผ่าน ไป แล้ว เรียน รู้", example:"Don't regret the past.", exampleThai:"อย่าเสียใจกับอดีต", rhymeGroup:"et" },
+  { id:665, word:"jealousy", phonetic:"/ˈdʒeləsi/", thai:"ความอิจฉา", category:"feelings", level:"B1", rhyme:"อิจ ฉา ทำ ใจ ไม่ สบาย ปล่อย วาง ดี กว่า", example:"Jealousy destroys friendships.", exampleThai:"ความอิจฉาทำลายมิตรภาพ", rhymeGroup:"y" },
+  { id:666, word:"content", phonetic:"/kənˈtent/", thai:"พอใจ/พอเพียง", category:"feelings", level:"B1", rhyme:"พอ ใจ ใน สิ่ง ที่ มี ใจ สุข ทุก วัน", example:"Be content with what you have.", exampleThai:"จงพอใจในสิ่งที่มี", rhymeGroup:"ent" },
+
+  // A1-A2 - Weather events & seasons
+  { id:667, word:"spring", phonetic:"/sprɪŋ/", thai:"ฤดูใบไม้ผลิ", category:"weather", level:"A1", rhyme:"ใบ ไม้ ผลิ ดอก ไม้ บาน สวย งาม", example:"Flowers bloom in spring.", exampleThai:"ดอกไม้บานในฤดูใบไม้ผลิ", rhymeGroup:"ing" },
+  { id:668, word:"summer", phonetic:"/ˈsʌmər/", thai:"ฤดูร้อน", category:"weather", level:"A1", rhyme:"ฤดู ร้อน แดด จ้า ว่าย น้ำ สนุก สนาน", example:"Summer is hot and sunny.", exampleThai:"ฤดูร้อนร้อนและแดดออก", rhymeGroup:"er" },
+  { id:669, word:"autumn", phonetic:"/ˈɔːtəm/", thai:"ฤดูใบไม้ร่วง", category:"weather", level:"A1", rhyme:"ใบ ไม้ ร่วง สี ทอง แดง งาม ตา", example:"Leaves fall in autumn.", exampleThai:"ใบไม้ร่วงในฤดูใบไม้ร่วง", rhymeGroup:"um" },
+  { id:670, word:"winter", phonetic:"/ˈwɪntər/", thai:"ฤดูหนาว", category:"weather", level:"A1", rhyme:"ฤดู หนาว หิมะ ขาว โพลน แสน สวย งาม", example:"Winter can be very cold.", exampleThai:"ฤดูหนาวอาจหนาวมาก", rhymeGroup:"er" },
+  { id:671, word:"breeze", phonetic:"/briːz/", thai:"ลมเบาๆ", category:"weather", level:"B1", rhyme:"ลม เบา ๆ พัด ชื่น ใจ สด ชื่น ดี", example:"A cool breeze is refreshing.", exampleThai:"ลมเย็นๆ ชื่นใจ", rhymeGroup:"eeze" },
+  { id:672, word:"humid", phonetic:"/ˈhjuːmɪd/", thai:"ชื้น", category:"weather", level:"B1", rhyme:"ชื้น แฉะ อากาศ ร้อน ชื้น อบ อ้าว", example:"Thailand is very humid.", exampleThai:"ประเทศไทยร้อนชื้นมาก", rhymeGroup:"id" },
+
+  // B2 - Advanced society / world
+  { id:673, word:"inequality", phonetic:"/ˌɪnɪˈkwɒlɪti/", thai:"ความไม่เท่าเทียม", category:"society", level:"B2", rhyme:"ความ ไม่ เท่า เทียม ต้อง ช่วย กัน แก้ ไข", example:"We must fight inequality.", exampleThai:"เราต้องต่อสู้กับความไม่เท่าเทียม", rhymeGroup:"y" },
+  { id:674, word:"poverty", phonetic:"/ˈpɒvəti/", thai:"ความยากจน", category:"society", level:"B1", rhyme:"ความ ยาก จน แก้ ไข ได้ ด้วย การ ศึกษา", example:"Education can reduce poverty.", exampleThai:"การศึกษาช่วยลดความยากจน", rhymeGroup:"y" },
+  { id:675, word:"prejudice", phonetic:"/ˈpredʒʊdɪs/", thai:"อคติ", category:"society", level:"B2", rhyme:"อคติ ทำ โลก แย่ ลง ต้อง ปล่อย วาง", example:"Overcome prejudice with knowledge.", exampleThai:"เอาชนะอคติด้วยความรู้", rhymeGroup:"ice" },
+  { id:676, word:"minority", phonetic:"/maɪˈnɒrɪti/", thai:"ชนกลุ่มน้อย", category:"society", level:"B2", rhyme:"ชน กลุ่ม น้อย มี สิทธิ์ เท่า เทียม กัน", example:"Protect the rights of minorities.", exampleThai:"ปกป้องสิทธิ์ของชนกลุ่มน้อย", rhymeGroup:"y" },
+  { id:677, word:"protest", phonetic:"/ˈproʊtest/", thai:"การประท้วง", category:"society", level:"B2", rhyme:"ประท้วง เรียก ร้อง ความ ยุติ ธรรม ด้วย สันติ", example:"People protest for their rights.", exampleThai:"ประชาชนประท้วงเพื่อสิทธิ์", rhymeGroup:"est" },
+
+  // B1 - More academic verbs
+  { id:678, word:"summarize", phonetic:"/ˈsʌməraɪz/", thai:"สรุป", category:"school", level:"B1", rhyme:"สรุป สั้น ๆ ชัด เจน ดี กว่า ยาว เยิ่น", example:"Summarize the main points.", exampleThai:"สรุปประเด็นหลัก", rhymeGroup:"ize" },
+  { id:679, word:"compare", phonetic:"/kəmˈpeər/", thai:"เปรียบเทียบ", category:"school", level:"A2", rhyme:"เปรียบ เทียบ สิ่ง ต่าง ๆ ให้ เห็น ชัด ขึ้น", example:"Compare the two answers.", exampleThai:"เปรียบเทียบคำตอบสองข้อ", rhymeGroup:"are" },
+  { id:680, word:"describe", phonetic:"/dɪˈskraɪb/", thai:"อธิบาย/บรรยาย", category:"school", level:"A2", rhyme:"บรรยาย ชัด เจน ให้ ผู้ อื่น เข้า ใจ ได้", example:"Describe the picture you see.", exampleThai:"บรรยายภาพที่คุณเห็น", rhymeGroup:"ibe" },
+  { id:681, word:"evaluate", phonetic:"/ɪˈvæljueɪt/", thai:"ประเมิน", category:"school", level:"B2", rhyme:"ประ เมิน ผล อย่าง ยุติ ธรรม และ รอบ คอบ", example:"Evaluate your work carefully.", exampleThai:"ประเมินงานของคุณอย่างรอบคอบ", rhymeGroup:"ate" },
+  { id:682, word:"classify", phonetic:"/ˈklæsɪfaɪ/", thai:"จัดประเภท", category:"school", level:"B1", rhyme:"จัด ประ เภท สิ่ง ต่าง ๆ ให้ มี ระบบ", example:"Classify the animals by type.", exampleThai:"จัดประเภทสัตว์ตามชนิด", rhymeGroup:"y" },
+
+  // A2 - Expressions & Phrases
+  { id:683, word:"maybe", phonetic:"/ˈmeɪbi/", thai:"อาจจะ", category:"expressions", level:"A1", rhyme:"อาจ จะ เป็น ไป ได้ ลอง ดู สัก ที", example:"Maybe we can go tomorrow.", exampleThai:"อาจจะไปพรุ่งนี้ก็ได้", rhymeGroup:"y" },
+  { id:684, word:"probably", phonetic:"/ˈprɒbəbli/", thai:"น่าจะ", category:"expressions", level:"A2", rhyme:"น่า จะ ใช่ แต่ ยัง ไม่ แน่ ใจ นัก", example:"It will probably rain today.", exampleThai:"วันนี้น่าจะฝนตก", rhymeGroup:"y" },
+  { id:685, word:"definitely", phonetic:"/ˈdefɪnətli/", thai:"แน่นอน", category:"expressions", level:"A2", rhyme:"แน่ นอน ไม่ ต้อง สงสัย เลย", example:"I'll definitely be there.", exampleThai:"ฉันจะไปแน่นอน", rhymeGroup:"y" },
+  { id:686, word:"actually", phonetic:"/ˈæktʃuəli/", thai:"จริงๆ แล้ว", category:"expressions", level:"A2", rhyme:"จริง ๆ แล้ว ไม่ เหมือน ที่ คิด ไว้ เลย", example:"Actually, I was wrong.", exampleThai:"จริงๆ แล้ว ฉันผิด", rhymeGroup:"y" },
+  { id:687, word:"however", phonetic:"/haʊˈevər/", thai:"อย่างไรก็ตาม", category:"expressions", level:"B1", rhyme:"อย่าง ไร ก็ ตาม ต้อง ยัง คง สู้ ต่อ ไป", example:"However, there is still hope.", exampleThai:"อย่างไรก็ตาม ยังมีความหวัง", rhymeGroup:"er" },
+  { id:688, word:"therefore", phonetic:"/ˈðeəfɔːr/", thai:"ดังนั้น", category:"expressions", level:"B1", rhyme:"ดัง นั้น จึง ต้อง ลง มือ ทำ ทันที", example:"Therefore, we must act now.", exampleThai:"ดังนั้น เราต้องลงมือทำเดี๋ยวนี้", rhymeGroup:"or" },
+  { id:689, word:"although", phonetic:"/ɔːlˈðoʊ/", thai:"แม้ว่า", category:"expressions", level:"B1", rhyme:"แม้ ว่า ยาก แต่ ก็ ไม่ ยอม แพ้ แน่", example:"Although it was hard, I finished.", exampleThai:"แม้ว่ามันยาก แต่ฉันทำเสร็จ", rhymeGroup:"o" },
+  { id:690, word:"furthermore", phonetic:"/ˈfɜːðəmɔːr/", thai:"นอกจากนี้", category:"expressions", level:"B2", rhyme:"นอก จาก นี้ ยัง มี สิ่ง ดี อีก มาก", example:"Furthermore, the plan saves money.", exampleThai:"นอกจากนี้ แผนนี้ยังประหยัดเงิน", rhymeGroup:"or" },
+
+  // B1 - Describing data / presentations
+  { id:691, word:"increase", phonetic:"/ɪnˈkriːs/", thai:"เพิ่มขึ้น", category:"actions", level:"B1", rhyme:"เพิ่ม ขึ้น ทุก วัน พัฒนา ไป เรื่อย ๆ", example:"Sales increased this year.", exampleThai:"ยอดขายเพิ่มขึ้นปีนี้", rhymeGroup:"ease" },
+  { id:692, word:"decrease", phonetic:"/dɪˈkriːs/", thai:"ลดลง", category:"actions", level:"B1", rhyme:"ลด ลง ทีละ น้อย จน ถึง จุด ที่ ดี", example:"Prices decreased last month.", exampleThai:"ราคาลดลงเดือนที่แล้ว", rhymeGroup:"ease" },
+  { id:693, word:"maintain", phonetic:"/meɪnˈteɪn/", thai:"รักษา/คงไว้", category:"actions", level:"B1", rhyme:"รัก ษา ให้ ดี อย่า ปล่อย ให้ เสื่อม ลง", example:"Maintain a healthy lifestyle.", exampleThai:"รักษาวิถีชีวิตที่ดีต่อสุขภาพ", rhymeGroup:"ain" },
+  { id:694, word:"demonstrate", phonetic:"/ˈdemənstreɪt/", thai:"แสดงให้เห็น", category:"actions", level:"B1", rhyme:"แสดง ให้ เห็น อย่าง ชัด เจน ทุก คน เข้า ใจ", example:"Demonstrate how to do it.", exampleThai:"แสดงให้เห็นว่าทำอย่างไร", rhymeGroup:"ate" },
+  { id:695, word:"estimate", phonetic:"/ˈestɪmɪt/", thai:"ประมาณ", category:"actions", level:"B1", rhyme:"ประ มาณ ก่อน แล้ว คำนวณ ให้ ชัด ขึ้น", example:"Estimate the cost first.", exampleThai:"ประมาณค่าใช้จ่ายก่อน", rhymeGroup:"ate" },
+
+  // A1 - More common verbs
+  { id:696, word:"find", phonetic:"/faɪnd/", thai:"หา/พบ", category:"actions", level:"A1", rhyme:"หา จน พบ สิ่ง ที่ ต้องการ ใจ ดี ใจ", example:"I found my lost keys.", exampleThai:"ฉันพบกุญแจที่หายไป", rhymeGroup:"ind" },
+  { id:697, word:"lose", phonetic:"/luːz/", thai:"หาย/แพ้", category:"actions", level:"A1", rhyme:"หาย ไป แล้ว ค้น หา ใหม่ อย่า ท้อ ถอย", example:"Don't lose hope.", exampleThai:"อย่าสูญเสียความหวัง", rhymeGroup:"ooze" },
+  { id:698, word:"spend", phonetic:"/spend/", thai:"ใช้จ่าย/ใช้เวลา", category:"actions", level:"A2", rhyme:"ใช้ เวลา ดี ๆ กับ คน ที่ รัก", example:"Spend time with your family.", exampleThai:"ใช้เวลากับครอบครัว", rhymeGroup:"end" },
+  { id:699, word:"reach", phonetic:"/riːtʃ/", thai:"ไปถึง/เอื้อมถึง", category:"actions", level:"A2", rhyme:"ไป ถึง จุด หมาย ด้วย ความ พยายาม", example:"Reach for your dreams.", exampleThai:"ไขว่คว้าความฝันของคุณ", rhymeGroup:"each" },
+  { id:700, word:"wonder", phonetic:"/ˈwʌndər/", thai:"สงสัย/น่าอัศจรรย์", category:"actions", level:"A2", rhyme:"สง สัย ใคร่ รู้ คือ จุด เริ่ม ของ ปัญญา", example:"I wonder how that works.", exampleThai:"ฉันสงสัยว่ามันทำงานอย่างไร", rhymeGroup:"er" },
 ];
 
 const CATEGORIES = [
@@ -528,4 +902,7 @@ const CATEGORIES = [
   { id:"communication", name:"การสื่อสาร", emoji:"💬", color:"#10b981" },
   { id:"shopping", name:"การช้อปปิ้ง", emoji:"🛍️", color:"#f59e0b" },
   { id:"weather", name:"สภาพอากาศ", emoji:"🌤️", color:"#06b6d4" },
+  { id:"prepositions", name:"คำบุพบท", emoji:"📌", color:"#6366f1" },
+  { id:"appearance", name:"รูปร่างหน้าตา", emoji:"👤", color:"#ec4899" },
+  { id:"expressions", name:"สำนวน", emoji:"💭", color:"#84cc16" },
 ];
