@@ -220,7 +220,7 @@ function speakWord(word) {
   if ('speechSynthesis' in window) {
     const utterance = new SpeechSynthesisUtterance(word);
     utterance.lang = 'en-US';
-    utterance.rate = 0.85;
+    utterance.rate = 0.65;
     utterance.pitch = 1.1;
     window.speechSynthesis.cancel();
     window.speechSynthesis.speak(utterance);
@@ -228,120 +228,312 @@ function speakWord(word) {
 }
 
 // Quiz
-function initQuiz() {
-  const words = getFilteredWords();
-  if (words.length < 4) {
+const QUIZ_BATCH_SIZE = 10;
+const QUIZ_POOL_KEY = 'quizPool_v4';
+
+function saveQuizPool(pool) {
+  const allIds = WORDS.map(w => w.id).sort((a, b) => a - b);
+  localStorage.setItem(QUIZ_POOL_KEY, JSON.stringify({
+    ...pool,
+    allIds
+  }));
+}
+
+function createFreshQuizPool(completedCycles = 0) {
+  return {
+    allIds: WORDS.map(w => w.id).sort((a, b) => a - b),
+    remainingIds: shuffle(WORDS.map(w => w.id)),
+    completedCycles
+  };
+}
+
+function loadQuizPool() {
+  const saved = JSON.parse(localStorage.getItem(QUIZ_POOL_KEY) || 'null');
+  const currentIds = WORDS.map(w => w.id).sort((a, b) => a - b);
+
+  if (
+    !saved ||
+    !Array.isArray(saved.remainingIds) ||
+    JSON.stringify(saved.allIds || []) !== JSON.stringify(currentIds)
+  ) {
+    const fresh = createFreshQuizPool(0);
+    saveQuizPool(fresh);
+    return fresh;
+  }
+
+  return saved;
+}
+
+function takeNextQuizBatch() {
+  let pool = loadQuizPool();
+
+  if (pool.remainingIds.length === 0) {
+    pool = createFreshQuizPool((pool.completedCycles || 0) + 1);
+  }
+
+  const batchSize = Math.min(QUIZ_BATCH_SIZE, pool.remainingIds.length);
+  const batchIds = pool.remainingIds.slice(0, batchSize);
+  pool.remainingIds = pool.remainingIds.slice(batchSize);
+
+  saveQuizPool(pool);
+
+  return batchIds
+    .map(id => WORDS.find(w => w.id === id))
+    .filter(Boolean);
+}
+
+function buildQuestion(word) {
+  const quizType = Math.random() < 0.5 ? 'en-to-th' : 'th-to-en';
+  const wrongOptions = shuffle(WORDS.filter(w => w.id !== word.id)).slice(0, 3);
+  const options = shuffle([word, ...wrongOptions]).map(w => w.id);
+
+  return {
+    wordId: word.id,
+    quizType,
+    optionIds: options
+  };
+}
+
+function createQuizState(batchWords) {
+  return {
+    words: batchWords,
+    questions: batchWords.map(buildQuestion),
+    index: 0,
+    correct: 0,
+    total: batchWords.length,
+    answers: Array(batchWords.length).fill(null)
+  };
+}
+
+function initQuiz(customBatch = null) {
+  if (WORDS.length < 4) {
     document.getElementById('quiz-area').innerHTML = `
       <div class="quiz-empty">
         <div class="quiz-empty-icon">📚</div>
-        <p>ต้องการคำศัพท์อย่างน้อย 4 คำ<br>กรุณาเลือกหมวดหมู่ที่มีคำมากกว่านี้</p>
-        <button class="btn-primary" onclick="showPage('home')">ไปเลือกหมวดหมู่</button>
-      </div>`;
+        <p>ต้องมีคำศัพท์อย่างน้อย 4 คำก่อนเริ่มควิซ</p>
+        <button class="btn-primary" onclick="showPage('home')">กลับหน้าหลัก</button>
+      </div>
+    `;
     return;
   }
-  quizState = { words: shuffle([...words]), index: 0, correct: 0, total: 0, answers: [] };
+
+  const batchWords = customBatch || takeNextQuizBatch();
+
+  if (!batchWords.length) {
+    document.getElementById('quiz-area').innerHTML = `
+      <div class="quiz-empty">
+        <div class="quiz-empty-icon">🎉</div>
+        <p>ตอนนี้ครบทุกคำแล้ว<br>กดเริ่มใหม่เพื่อสุ่มรอบใหม่</p>
+        <button class="btn-primary" onclick="initQuiz()">เริ่มรอบใหม่</button>
+      </div>
+    `;
+    return;
+  }
+
+  quizState = createQuizState(batchWords);
   score = { correct: 0, total: 0, streak: 0, maxStreak: 0 };
+
   renderQuiz();
 }
 
 function renderQuiz() {
   if (!quizState) return;
-  const { words, index } = quizState;
 
-  if (index >= Math.min(words.length, 10)) {
-    showQuizResult();
-    return;
-  }
+  const totalQuestions = quizState.questions.length;
+  const currentIndex = quizState.index;
+  const question = quizState.questions[currentIndex];
+  const word = WORDS.find(w => w.id === question.wordId);
+  const currentAnswer = quizState.answers[currentIndex];
+  const answeredCount = quizState.answers.filter(Boolean).length;
+  const progress = Math.round((answeredCount / totalQuestions) * 100);
+  const pool = loadQuizPool();
 
-  const word = words[index];
-  const allWords = WORDS;
-  const wrong = shuffle(allWords.filter(w => w.id !== word.id)).slice(0, 3);
-  const options = shuffle([word, ...wrong]);
-  const progress = Math.round(((index) / Math.min(words.length, 10)) * 100);
-  const quizType = index % 2 === 0 ? 'en-to-th' : 'th-to-en';
+  if (!word) return;
 
   document.getElementById('quiz-area').innerHTML = `
     <div class="quiz-header">
-      <div class="quiz-progress-bar"><div style="width:${progress}%"></div></div>
+      <div class="quiz-progress-bar">
+        <div style="width:${progress}%"></div>
+      </div>
       <div class="quiz-meta">
-        <span>ข้อที่ ${index + 1} / ${Math.min(words.length, 10)}</span>
-        <span>✓ ${score.correct} คะแนน</span>
-        <span>🔥 ${score.streak} ต่อเนื่อง</span>
+        <span>ข้อที่ ${currentIndex + 1} / ${totalQuestions}</span>
+        <span>ตอบแล้ว ${answeredCount} / ${totalQuestions}</span>
+        <span>เหลืออีก ${pool.remainingIds.length} คำก่อนวนซ้ำ</span>
       </div>
     </div>
 
     <div class="quiz-question">
-      ${quizType === 'en-to-th' ?
-        `<div class="quiz-q-label">คำว่าอะไรในภาษาไทย?</div>
-         <div class="quiz-word">${word.word}</div>
-         <div class="quiz-phonetic">${word.phonetic}</div>` :
-        `<div class="quiz-q-label">คำว่าอะไรในภาษาอังกฤษ?</div>
-         <div class="quiz-word th-word">${word.thai}</div>`
+      ${
+        question.quizType === 'en-to-th'
+          ? `
+            <div class="quiz-q-label">คำนี้ภาษาไทยคืออะไร?</div>
+            <div class="quiz-word">${word.word}</div>
+            <div class="quiz-phonetic">${word.phonetic}</div>
+          `
+          : `
+            <div class="quiz-q-label">คำนี้ภาษาอังกฤษคืออะไร?</div>
+            <div class="quiz-word th-word">${word.thai}</div>
+          `
       }
     </div>
 
-    <div class="quiz-options">
-      ${options.map(opt => `
-        <button class="quiz-opt" onclick="checkAnswer(${word.id}, ${opt.id}, this)">
-          ${quizType === 'en-to-th' ? opt.thai : opt.word}
-        </button>
-      `).join('')}
+    <div class="quiz-audio-row">
+      <button class="btn-secondary" onclick="speakWord('${word.word}')">🔊 ฟังคำ</button>
+      <button class="btn-secondary" onclick="stopSpeaking()">⏹️ หยุดเสียง</button>
     </div>
 
-    <button class="btn-speak-quiz" onclick="speakWord('${word.word}')">🔊 ฟังเสียง</button>
+    <div class="quiz-options">
+      ${question.optionIds.map(optionId => {
+        const optionWord = WORDS.find(w => w.id === optionId);
+        if (!optionWord) return '';
+
+        const label = question.quizType === 'en-to-th' ? optionWord.thai : optionWord.word;
+
+        let extraClass = '';
+        let disabled = '';
+
+        if (currentAnswer) {
+          disabled = 'disabled';
+
+          if (optionId === word.id) {
+            extraClass += ' correct';
+          }
+
+          if (currentAnswer.selectedId === optionId && optionId !== word.id) {
+            extraClass += ' wrong';
+          }
+        }
+
+        return `
+          <button
+            class="quiz-opt${extraClass}"
+            ${disabled}
+            onclick="checkAnswer(${word.id}, ${optionId})"
+          >
+            ${label}
+          </button>
+        `;
+      }).join('')}
+    </div>
+
+    ${
+      currentAnswer
+        ? `
+          <div class="quiz-inline-feedback ${currentAnswer.isCorrect ? 'correct' : 'wrong'}">
+            ${
+              currentAnswer.isCorrect
+                ? '🎉 ถูกต้อง!'
+                : question.quizType === 'en-to-th'
+                  ? `❌ เฉลย: ${word.thai}`
+                  : `❌ เฉลย: ${word.word}`
+            }
+          </div>
+        `
+        : ''
+    }
+
+    <div class="quiz-nav-row">
+      <button
+        class="btn-secondary"
+        onclick="goPrevQuestion()"
+        ${currentIndex === 0 ? 'disabled' : ''}
+      >
+         ย้อนกลับ
+      </button>
+
+      <button class="btn-primary" onclick="goNextQuestion()">
+        ${currentIndex === totalQuestions - 1 ? '✅ ดูผลคะแนน' : ' ข้อถัดไป'}
+      </button>
+    </div>
   `;
 }
 
-function checkAnswer(correctId, selectedId, btn) {
-  const buttons = document.querySelectorAll('.quiz-opt');
-  buttons.forEach(b => b.disabled = true);
+function checkAnswer(correctId, selectedId) {
+  if (!quizState) return;
+
+  const currentIndex = quizState.index;
+
+  if (quizState.answers[currentIndex]) {
+    return;
+  }
 
   const isCorrect = correctId === selectedId;
-  score.total++;
-  quizState.total++;
 
+  quizState.answers[currentIndex] = {
+    correctId,
+    selectedId,
+    isCorrect
+  };
+
+  quizState.correct = quizState.answers.filter(a => a && a.isCorrect).length;
+
+  score.total++;
   if (isCorrect) {
     score.correct++;
     score.streak++;
     score.maxStreak = Math.max(score.maxStreak, score.streak);
-    quizState.correct++;
-    btn.classList.add('correct');
-    showQuizFeedback(true);
   } else {
     score.streak = 0;
-    btn.classList.add('wrong');
-    buttons.forEach(b => {
-      const wordData = WORDS.find(w =>
-        b.textContent.trim() === w.thai || b.textContent.trim() === w.word
-      );
-      if (wordData && wordData.id === correctId) b.classList.add('correct');
-    });
-    showQuizFeedback(false);
   }
 
+  studiedWords.add(correctId);
+  saveProgress();
+  updateStats();
+
+  // เพิ่มคำสั่งนี้เพื่อให้ฟังเสียงคำที่ตอบถูก
   const word = WORDS.find(w => w.id === correctId);
   if (word) {
-    setTimeout(() => speakWord(word.word), isCorrect ? 100 : 500);
+    speakWord(word.word);  // อ่านคำที่ถูกต้องหลังจากเลือกคำตอบ
   }
 
-  setTimeout(() => {
-    quizState.index++;
-    renderQuiz();
-    updateStats();
-  }, 1500);
+  renderQuiz();
 }
 
-function showQuizFeedback(correct) {
-  const feedback = document.createElement('div');
-  feedback.className = 'quiz-feedback ' + (correct ? 'correct' : 'wrong');
-  feedback.textContent = correct ? '🎉 ถูกต้อง!' : '😅 ลองใหม่นะ!';
-  document.getElementById('quiz-area').appendChild(feedback);
-  setTimeout(() => feedback.remove(), 1400);
+function goPrevQuestion() {
+  if (!quizState) return;
+  if (quizState.index > 0) {
+    quizState.index--;
+    renderQuiz();
+  }
+}
+
+function goNextQuestion() {
+  if (!quizState) return;
+
+  const totalQuestions = quizState.questions.length;
+
+  if (quizState.index < totalQuestions - 1) {
+    quizState.index++;
+    renderQuiz();
+    return;
+  }
+
+  const firstUnanswered = quizState.answers.findIndex(answer => !answer);
+
+  if (firstUnanswered !== -1) {
+    quizState.index = firstUnanswered;
+    renderQuiz();
+    return;
+  }
+
+  showQuizResult();
+}
+
+function stopSpeaking() {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+  }
 }
 
 function showQuizResult() {
+  if (!quizState) return;
+
   const pct = Math.round((quizState.correct / quizState.total) * 100);
-  let msg = pct >= 80 ? '🌟 เก่งมากเลย!' : pct >= 60 ? '👍 ทำได้ดี!' : '💪 ฝึกต่อไปนะ!';
+  const pool = loadQuizPool();
+
+  let msg = '💪 ฝึกต่ออีกนิดนะ!';
+  if (pct >= 80) msg = '🏆 เก่งมาก!';
+  else if (pct >= 60) msg = '⭐ ทำได้ดีมาก!';
 
   document.getElementById('quiz-area').innerHTML = `
     <div class="quiz-result">
@@ -350,28 +542,34 @@ function showQuizResult() {
       <div class="result-pct">${pct}%</div>
       <div class="result-msg">${msg}</div>
       <div class="result-streak">สถิติต่อเนื่อง: 🔥 ${score.maxStreak}</div>
+      <div class="result-streak">เหลืออีก ${pool.remainingIds.length} คำก่อนจะเริ่มวนซ้ำ</div>
       <div class="result-btns">
-        <button class="btn-primary" onclick="initQuiz()">🔄 ทำใหม่</button>
-        <button class="btn-secondary" onclick="continueLearning()">📚 เรียนต่อ</button>
+        <button class="btn-primary" onclick="initQuiz()">🎯 ชุดถัดไป</button>
+        <button class="btn-secondary" onclick="showPage('home')">📚 กลับหน้าคำศัพท์</button>
       </div>
     </div>
   `;
 }
 
-function continueLearning() {
-  // อยู่หน้า quiz เหมือนเดิม แล้วสุ่มชุดคำถามใหม่
-  currentPage = 'quiz';
-  initQuiz();
-}
-
 function startQuizForWord(id) {
-  showPage('quiz');
-  // Will init naturally
+  const selectedWord = WORDS.find(w => w.id === id);
+  if (!selectedWord) return;
+
+  const extraWords = shuffle(WORDS.filter(w => w.id !== id)).slice(0, QUIZ_BATCH_SIZE - 1);
+  const customBatch = [selectedWord, ...extraWords];
+
+  showPage('quiz', true);
+  initQuiz(customBatch);
 }
 
 // Utilities
 function shuffle(arr) {
-  return arr.sort(() => Math.random() - 0.5);
+  const newArr = [...arr];
+  for (let i = newArr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+  }
+  return newArr;
 }
 
 // Keyboard close modal
